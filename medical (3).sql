@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
+-- version 4.8.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 17, 2018 at 02:06 AM
--- Server version: 10.1.26-MariaDB
--- PHP Version: 7.1.9
+-- Generation Time: Dec 30, 2018 at 05:06 PM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 5.6.35
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -49,8 +49,19 @@ CREATE TABLE `employee_data` (
   `jabatan_kode` int(11) NOT NULL,
   `ed_password` varchar(32) NOT NULL,
   `ed_status` enum('Logged_in','Logged_out') NOT NULL,
-  `ed_role` enum('admin') NOT NULL
+  `ed_role` enum('admin','kasir','resepsionis','manajer_sdm','staff_asset','staff_keuangan','staff_kesehatan') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `employee_data`
+--
+
+INSERT INTO `employee_data` (`ed_nip`, `ed_nama`, `ed_tanggal_lahir`, `ed_tahun_masuk`, `ed_bulan_masuk`, `jabatan_kode`, `ed_password`, `ed_status`, `ed_role`) VALUES
+(1, 'Mahmud Hakim', '1976-08-14', '2009', 'April', 1, 'mahmud_tampan', 'Logged_out', ''),
+(2, 'Makmur Jaya', '1975-12-05', '2010', 'Maret', 3, 'qwerty', 'Logged_out', 'admin'),
+(3, 'Jaya Acai', '1989-04-07', '2011', 'Januari', 2, 'acai123', 'Logged_out', 'admin'),
+(4, 'Anan Iman', '1999-01-02', '2012', 'Februari', 4, 'anantampan123', 'Logged_out', 'admin'),
+(5, 'Operation Boy', '1999-02-05', '2017', 'November', 1, 'heyboys', 'Logged_out', 'admin');
 
 -- --------------------------------------------------------
 
@@ -190,6 +201,17 @@ CREATE TABLE `inventaris_obat` (
   `ib_kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `inventaris_obat`
+--
+
+INSERT INTO `inventaris_obat` (`ib_kode`, `ib_nama`, `ib_jenis`, `ib_harga_beli`, `ib_harga_jual`, `ib_kuantitas`) VALUES
+(1, 'Panadol', 'Tablet', 4000, 6000, 100),
+(2, 'bodrek', 'Tablet', 5000, 8000, 125),
+(3, 'antangin', 'Sirup', 2000, 5000, 300),
+(4, 'neuromacyl', 'Kapsul', 4000, 7000, 100),
+(5, 'penisilin', 'Tablet', 10000, 50000, 200);
+
 -- --------------------------------------------------------
 
 --
@@ -203,6 +225,17 @@ CREATE TABLE `inventaris_peralatan` (
   `ip_kuantitas` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `inventaris_peralatan`
+--
+
+INSERT INTO `inventaris_peralatan` (`ip_id`, `ip_nama`, `ip_harga_beli`, `ip_kuantitas`) VALUES
+(1, 'Tabung Oksigen', 70000, 7),
+(2, 'infus', 50000, 30),
+(3, 'Ranjang', 500000, 5),
+(4, 'Komputer', 5000000, 5),
+(5, 'Stetoskop', 150000, 7);
+
 -- --------------------------------------------------------
 
 --
@@ -215,6 +248,16 @@ CREATE TABLE `jabatan` (
   `jabatan_gaji` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `jabatan`
+--
+
+INSERT INTO `jabatan` (`jabatan_kode`, `jabatan_nama`, `jabatan_gaji`) VALUES
+(1, 'Cleaning Service', 1200000),
+(2, 'Perawat', 2500000),
+(3, 'Administrasi', 2200000),
+(4, 'Dokter', 4100000);
+
 -- --------------------------------------------------------
 
 --
@@ -222,7 +265,7 @@ CREATE TABLE `jabatan` (
 --
 
 CREATE TABLE `medical_dose` (
-  `fm_fmd_id` int(11) NOT NULL,
+  `fm_id` int(11) NOT NULL,
   `fmd_md_medicine_name` varchar(50) NOT NULL,
   `fmd_md_frequency` enum('daily','bid','tid','qid','nightly','prn') NOT NULL,
   `fmd_md_medicine_consumed_status` tinyint(1) NOT NULL
@@ -278,20 +321,10 @@ CREATE TABLE `patient_data` (
 
 INSERT INTO `patient_data` (`pd_id`, `pd_nama`, `pd_tanggal_lahir`, `pd_tempat_lahir`, `pd_jenis_kelamin`, `pd_alamat`, `pd_nomor_darurat`, `pd_nomor_narahubung`, `pd_relasi_nomor_narahubung`, `pd_faskes_utama`) VALUES
 (0, 'Fakhri Rizha Ananda', '2001-03-27', 'Medan', 'Pria', 'Jl. Sidodadi Komplek Johor Regency Blok B6', '1234567890', '1234567890', 'Abang', 'Klinik Harapan Bunda'),
-(2, 'Fakhri Rizha Ananda', '2018-12-18', 'Medan', 'Pria', 'Jl. Sidodadi Komplek Johor Regency Blok B6', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(3, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(4, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(5, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(6, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(7, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(8, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(9, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(10, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(11, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(12, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(13, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(14, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa'),
-(15, 'Fakhri Rizha Ananda', '2018-12-18', '', '', '', '123456789', '123456789', 'asadasd', 'asdasdsa');
+(16, 'Ananda Muharriz Sinaga', '1997-12-11', 'Medan', 'Pria', 'Jln.Sukarame no.90', '081260629965', '08887506421', 'Orang Tua', 'Klinik Harapan Bunda'),
+(17, 'Rafif Rasyidi', '1998-09-11', 'Medan', 'Pria', 'Gg.Ganggang No 21 Kecamatan Deli Tua', '081234567322', '087863554277', 'Pacar', 'Klinik Harapan Bunda'),
+(18, 'Ibnu Maulana', '1988-01-06', 'Tembung', 'Pria', 'Gg.Sado no.70', '08236453822', '08784854798', 'Saudara', 'Klinik Harapan Bunda'),
+(19, 'Bambang Subagyo', '1945-12-13', 'Jakarta', 'Pria', 'Komp.Villa Flamboyan Raya blok S no.4', '087384638348', '081264748372', 'Istri', 'Klinik Harapan Bunda');
 
 -- --------------------------------------------------------
 
@@ -664,7 +697,8 @@ CREATE TABLE `vital_signs` (
 -- Indexes for table `chronical_problem_history`
 --
 ALTER TABLE `chronical_problem_history`
-  ADD KEY `sf_id` (`sf_id`);
+  ADD KEY `sf_id` (`sf_id`),
+  ADD KEY `sf_id_2` (`sf_id`);
 
 --
 -- Indexes for table `employee_data`
@@ -683,33 +717,38 @@ ALTER TABLE `e_payment`
 -- Indexes for table `family_history`
 --
 ALTER TABLE `family_history`
-  ADD KEY `sf_id` (`sf_id`);
+  ADD KEY `sf_id` (`sf_id`),
+  ADD KEY `sf_id_2` (`sf_id`);
 
 --
 -- Indexes for table `flowsheet_medication`
 --
 ALTER TABLE `flowsheet_medication`
   ADD PRIMARY KEY (`fm_id`),
-  ADD KEY `mr_id` (`mr_id`);
+  ADD KEY `mr_id` (`mr_id`),
+  ADD KEY `mr_id_2` (`mr_id`);
 
 --
 -- Indexes for table `flowsheet_medication_detail`
 --
 ALTER TABLE `flowsheet_medication_detail`
   ADD PRIMARY KEY (`fm_fmd_id`),
-  ADD KEY `fm_id` (`fm_id`);
+  ADD KEY `fm_id` (`fm_id`),
+  ADD KEY `fm_id_2` (`fm_id`);
 
 --
 -- Indexes for table `hospitalization_history`
 --
 ALTER TABLE `hospitalization_history`
-  ADD KEY `sf_id` (`sf_id`);
+  ADD KEY `sf_id` (`sf_id`),
+  ADD KEY `sf_id_2` (`sf_id`);
 
 --
 -- Indexes for table `initial_risk_assessment`
 --
 ALTER TABLE `initial_risk_assessment`
-  ADD KEY `sf_id` (`sf_id`);
+  ADD KEY `sf_id` (`sf_id`),
+  ADD KEY `sf_id_2` (`sf_id`);
 
 --
 -- Indexes for table `inventaris_obat`
@@ -733,20 +772,23 @@ ALTER TABLE `jabatan`
 -- Indexes for table `medical_dose`
 --
 ALTER TABLE `medical_dose`
-  ADD KEY `fm_fmd_id` (`fm_fmd_id`);
+  ADD KEY `fm_fmd_id` (`fm_id`),
+  ADD KEY `fm_id` (`fm_id`);
 
 --
 -- Indexes for table `medical_record`
 --
 ALTER TABLE `medical_record`
   ADD PRIMARY KEY (`mr_id`),
-  ADD KEY `pd_id` (`pd_id`);
+  ADD KEY `pd_id` (`pd_id`),
+  ADD KEY `pd_id_2` (`pd_id`);
 
 --
 -- Indexes for table `medication_sheet`
 --
 ALTER TABLE `medication_sheet`
-  ADD KEY `fm_id` (`fm_id`);
+  ADD KEY `fm_id` (`fm_id`),
+  ADD KEY `fm_id_2` (`fm_id`);
 
 --
 -- Indexes for table `patient_data`
@@ -759,65 +801,78 @@ ALTER TABLE `patient_data`
 --
 ALTER TABLE `patient_update`
   ADD PRIMARY KEY (`pu_id`),
-  ADD KEY `pd_id` (`pd_id`);
+  ADD KEY `pd_id` (`pd_id`),
+  ADD KEY `pd_id_2` (`pd_id`);
 
 --
 -- Indexes for table `physical_exam`
 --
 ALTER TABLE `physical_exam`
-  ADD KEY `pn_id` (`pn_id`);
+  ADD KEY `pn_id` (`pn_id`),
+  ADD KEY `pn_id_2` (`pn_id`);
 
 --
 -- Indexes for table `progress_note`
 --
 ALTER TABLE `progress_note`
   ADD PRIMARY KEY (`pn_id`),
-  ADD KEY `mr_id` (`mr_id`);
+  ADD KEY `mr_id` (`mr_id`),
+  ADD KEY `mr_id_2` (`mr_id`),
+  ADD KEY `mr_id_3` (`mr_id`);
 
 --
 -- Indexes for table `review_of_system`
 --
 ALTER TABLE `review_of_system`
-  ADD KEY `pn_id` (`pn_id`);
+  ADD KEY `pn_id` (`pn_id`),
+  ADD KEY `pn_id_2` (`pn_id`),
+  ADD KEY `pn_id_3` (`pn_id`);
 
 --
 -- Indexes for table `social_history`
 --
 ALTER TABLE `social_history`
-  ADD KEY `sf_id` (`sf_id`);
+  ADD KEY `sf_id` (`sf_id`),
+  ADD KEY `sf_id_2` (`sf_id`);
 
 --
 -- Indexes for table `summary_form`
 --
 ALTER TABLE `summary_form`
   ADD PRIMARY KEY (`sf_id`),
-  ADD KEY `mr_id` (`mr_id`);
+  ADD KEY `mr_id` (`mr_id`),
+  ADD KEY `mr_id_2` (`mr_id`);
 
 --
 -- Indexes for table `surgical_history`
 --
 ALTER TABLE `surgical_history`
-  ADD KEY `sf_id` (`sf_id`);
+  ADD KEY `sf_id` (`sf_id`),
+  ADD KEY `sf_id_2` (`sf_id`);
 
 --
 -- Indexes for table `transaksi_data`
 --
 ALTER TABLE `transaksi_data`
   ADD PRIMARY KEY (`td_kode`),
-  ADD KEY `pd_id` (`pd_id`);
+  ADD KEY `pd_id` (`pd_id`),
+  ADD KEY `pd_id_2` (`pd_id`);
 
 --
 -- Indexes for table `transaksi_data_detail`
 --
 ALTER TABLE `transaksi_data_detail`
   ADD PRIMARY KEY (`tdd_id`),
-  ADD KEY `td_kode` (`td_kode`);
+  ADD KEY `td_kode` (`td_kode`),
+  ADD KEY `td_kode_2` (`td_kode`),
+  ADD KEY `ib_kode` (`ib_kode`);
 
 --
 -- Indexes for table `vital_signs`
 --
 ALTER TABLE `vital_signs`
-  ADD KEY `pn_id` (`pn_id`);
+  ADD KEY `pn_id` (`pn_id`),
+  ADD KEY `pn_id_2` (`pn_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -827,7 +882,7 @@ ALTER TABLE `vital_signs`
 -- AUTO_INCREMENT for table `employee_data`
 --
 ALTER TABLE `employee_data`
-  MODIFY `ed_nip` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ed_nip` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `flowsheet_medication`
@@ -845,13 +900,19 @@ ALTER TABLE `flowsheet_medication_detail`
 -- AUTO_INCREMENT for table `inventaris_obat`
 --
 ALTER TABLE `inventaris_obat`
-  MODIFY `ib_kode` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ib_kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `inventaris_peralatan`
 --
 ALTER TABLE `inventaris_peralatan`
-  MODIFY `ip_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ip_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `jabatan`
+--
+ALTER TABLE `jabatan`
+  MODIFY `jabatan_kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `medical_record`
@@ -863,7 +924,7 @@ ALTER TABLE `medical_record`
 -- AUTO_INCREMENT for table `patient_data`
 --
 ALTER TABLE `patient_data`
-  MODIFY `pd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `pd_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `patient_update`
@@ -894,6 +955,113 @@ ALTER TABLE `transaksi_data`
 --
 ALTER TABLE `transaksi_data_detail`
   MODIFY `tdd_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `family_history`
+--
+ALTER TABLE `family_history`
+  ADD CONSTRAINT `family_history_ibfk_1` FOREIGN KEY (`sf_id`) REFERENCES `summary_form` (`sf_id`);
+
+--
+-- Constraints for table `flowsheet_medication`
+--
+ALTER TABLE `flowsheet_medication`
+  ADD CONSTRAINT `flowsheet_medication_ibfk_1` FOREIGN KEY (`mr_id`) REFERENCES `medical_record` (`mr_id`);
+
+--
+-- Constraints for table `flowsheet_medication_detail`
+--
+ALTER TABLE `flowsheet_medication_detail`
+  ADD CONSTRAINT `flowsheet_medication_detail_ibfk_1` FOREIGN KEY (`fm_id`) REFERENCES `flowsheet_medication` (`fm_id`);
+
+--
+-- Constraints for table `hospitalization_history`
+--
+ALTER TABLE `hospitalization_history`
+  ADD CONSTRAINT `hospitalization_history_ibfk_1` FOREIGN KEY (`sf_id`) REFERENCES `summary_form` (`sf_id`);
+
+--
+-- Constraints for table `initial_risk_assessment`
+--
+ALTER TABLE `initial_risk_assessment`
+  ADD CONSTRAINT `initial_risk_assessment_ibfk_1` FOREIGN KEY (`sf_id`) REFERENCES `summary_form` (`sf_id`);
+
+--
+-- Constraints for table `medical_dose`
+--
+ALTER TABLE `medical_dose`
+  ADD CONSTRAINT `medical_dose_ibfk_1` FOREIGN KEY (`fm_id`) REFERENCES `flowsheet_medication` (`fm_id`);
+
+--
+-- Constraints for table `medical_record`
+--
+ALTER TABLE `medical_record`
+  ADD CONSTRAINT `medical_record_ibfk_1` FOREIGN KEY (`pd_id`) REFERENCES `patient_data` (`pd_id`);
+
+--
+-- Constraints for table `medication_sheet`
+--
+ALTER TABLE `medication_sheet`
+  ADD CONSTRAINT `medication_sheet_ibfk_1` FOREIGN KEY (`fm_id`) REFERENCES `flowsheet_medication` (`fm_id`);
+
+--
+-- Constraints for table `patient_update`
+--
+ALTER TABLE `patient_update`
+  ADD CONSTRAINT `patient_update_ibfk_1` FOREIGN KEY (`pd_id`) REFERENCES `patient_data` (`pd_id`);
+
+--
+-- Constraints for table `physical_exam`
+--
+ALTER TABLE `physical_exam`
+  ADD CONSTRAINT `physical_exam_ibfk_1` FOREIGN KEY (`pn_id`) REFERENCES `progress_note` (`pn_id`);
+
+--
+-- Constraints for table `progress_note`
+--
+ALTER TABLE `progress_note`
+  ADD CONSTRAINT `progress_note_ibfk_1` FOREIGN KEY (`mr_id`) REFERENCES `medical_record` (`mr_id`);
+
+--
+-- Constraints for table `review_of_system`
+--
+ALTER TABLE `review_of_system`
+  ADD CONSTRAINT `review_of_system_ibfk_1` FOREIGN KEY (`pn_id`) REFERENCES `progress_note` (`pn_id`);
+
+--
+-- Constraints for table `social_history`
+--
+ALTER TABLE `social_history`
+  ADD CONSTRAINT `social_history_ibfk_1` FOREIGN KEY (`sf_id`) REFERENCES `summary_form` (`sf_id`);
+
+--
+-- Constraints for table `surgical_history`
+--
+ALTER TABLE `surgical_history`
+  ADD CONSTRAINT `surgical_history_ibfk_1` FOREIGN KEY (`sf_id`) REFERENCES `summary_form` (`sf_id`);
+
+--
+-- Constraints for table `transaksi_data`
+--
+ALTER TABLE `transaksi_data`
+  ADD CONSTRAINT `transaksi_data_ibfk_1` FOREIGN KEY (`pd_id`) REFERENCES `patient_data` (`pd_id`);
+
+--
+-- Constraints for table `transaksi_data_detail`
+--
+ALTER TABLE `transaksi_data_detail`
+  ADD CONSTRAINT `transaksi_data_detail_ibfk_1` FOREIGN KEY (`td_kode`) REFERENCES `transaksi_data` (`td_kode`),
+  ADD CONSTRAINT `transaksi_data_detail_ibfk_2` FOREIGN KEY (`ib_kode`) REFERENCES `inventaris_obat` (`ib_kode`);
+
+--
+-- Constraints for table `vital_signs`
+--
+ALTER TABLE `vital_signs`
+  ADD CONSTRAINT `vital_signs_ibfk_1` FOREIGN KEY (`pn_id`) REFERENCES `progress_note` (`pn_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
