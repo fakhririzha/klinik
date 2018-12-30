@@ -1,4 +1,5 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Admin extends CI_Controller
@@ -28,14 +29,14 @@ class Admin extends CI_Controller
 
     public function index()
     {
-        if ($this->session->userdata('logged_in') != '' && $this->session->userdata('role') == 'admin') {
-            $var['content'] = '/admin/content/home';
+        // if ($this->session->userdata('logged_in') != '' && $this->session->userdata('role') == 'admin') {
+        $var['content'] = '/admin/content/home';
 
-            $this->load->vars($var);
-            $this->load->view('admin/layout');
-        } else {
-            redirect('admin/forbidden_403');
-        }
+        $this->load->vars($var);
+        $this->load->view('admin/layout');
+        // } else {
+        // redirect('admin/forbidden_403');
+        // }
     }
 
     public function logout()

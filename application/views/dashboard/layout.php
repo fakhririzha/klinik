@@ -145,7 +145,7 @@
           </li>
           <li class="no-padding">
             <ul class="collapsible" data-collapsible="accordion">
-               <li class="bold">
+              <li class="bold">
                 <a href="<?= site_url() ?>" class="waves-effect waves-cyan">
                   <i class="material-icons">dashboard</i>
                   <span class="nav-text">Halaman Utama</span>

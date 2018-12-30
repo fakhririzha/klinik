@@ -145,7 +145,7 @@
           </li>
           <li class="no-padding">
             <ul class="collapsible" data-collapsible="accordion">
-               <li class="bold">
+              <li class="bold">
                 <a href="<?= site_url() ?>" class="waves-effect waves-cyan">
                   <i class="material-icons">dashboard</i>
                   <span class="nav-text">Halaman Utama</span>
@@ -153,65 +153,57 @@
               </li>
               <li class="bold">
                 <a class="collapsible-header waves-effect">
-                  <i class="material-icons">people_outline</i>
-                  <span class="nav-text">Pasien</span>
+                  <i class="material-icons">event_note</i>
+                  <span class="nav-text">Pemeriksaan Kesehatan</span>
                 </a>
                 <div class="collapsible-body">
                   <ul>
                     <li>
                       <a href="<?= site_url('admin/data_pasien') ?>"><i
-                          class="material-icons">list</i>Data
-                        Pasien</a></li>
+                          class="material-icons">assignment</i>Form Pemeriksaan</a></li>
                     <li>
                       <a href="<?= site_url('admin/registrasi_pasien') ?>"><i
-                          class="material-icons">group_add</i>Registrasi Pasien</a></li>
-                    <li>
-                      <a href="<?= site_url('admin/pemeriksaan_kesehatan') ?>"><i
-                          class="material-icons">local_hospital</i>Pemeriksaan
-                        Kesehatan</a></li>
+                          class="material-icons">group_add</i>List Pemeriksaan</a></li>
                   </ul>
                 </div>
               </li>
               <li class="bold">
                 <a class="collapsible-header waves-effect">
                   <i class="material-icons">monetization_on</i>
-                  <span class="nav-text">Transaksi</span>
+                  <span class="nav-text">Rekam Medis</span>
                 </a>
                 <div class="collapsible-body">
                   <ul>
                     <li>
                       <a href="<?= site_url('admin/e_payment') ?>"><i
-                          class="material-icons">list</i>Data E-Payment</a></li>
+                          class="material-icons">list</i>Form Rekam Medis</a></li>
                     <li>
                       <a href="<?= site_url('admin/aktivasi_e_payment') ?>"><i
-                          class="material-icons">beenhere</i>Aktivasi E-Payment</a></li>
-                    <li>
-                      <a href="<?= site_url('admin/proses_transaksi') ?>"><i
-                          class="material-icons">shopping_cart</i>Proses Transaksi</a></li>
+                          class="material-icons">beenhere</i>Histori Medis</a></li>
                   </ul>
                 </div>
               </li>
               <li class="bold">
                 <a class="collapsible-header waves-effect">
                   <i class="material-icons">view_comfy</i>
-                  <span class="nav-text">Inventaris</span>
+                  <span class="nav-text">Form Kesimpulan</span>
                 </a>
                 <div class="collapsible-body">
                   <ul>
                     <li>
                       <a href="<?= site_url('admin/data_obat') ?>"><i
-                          class="material-icons">bubble_chart</i>Data Obat</a></li>
+                          class="material-icons">bubble_chart</i>Metode Penyembuhan</a></li>
                     <li>
                       <a href="<?= site_url('admin/tambah_obat') ?>"><i
-                          class="material-icons">add_box</i>Tambah Obat</a></li>
-                    <li>
-                      <a href="<?= site_url('admin/data_inventaris') ?>"><i
-                          class="material-icons">extension</i>Data Inventaris</a></li>
-                    <li>
-                      <a href="<?= site_url('admin/data_inventaris') ?>"><i
-                          class="material-icons">add_box</i>Tambah Inventaris</a></li>
+                          class="material-icons">add_box</i>Metode Pengobatan</a></li>
                   </ul>
                 </div>
+              </li>
+              <li class="bold">
+                <a href="<?= site_url() ?>" class="waves-effect waves-cyan">
+                  <i class="material-icons">dashboard</i>
+                  <span class="nav-text">Antrian</span>
+                </a>
               </li>
             </ul>
           </li>
