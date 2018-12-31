@@ -36,13 +36,28 @@
                                 <li><a href="<?php echo base_url()?>Main/servicespage">Layanan</a></li>
                                 <li><a href="<?php echo base_url()?>Main/newspage">Berita</a></li>
                                 <li><a href="<?php echo base_url()?>Main/contactpage">Kontak</a></li>
+
+                                <?php if($this->session->userdata('password')) { ?>
+                                <li><a href="<?php echo base_url()?>Main/logout">Logout</a></li>
+                                <?php } else {?>
                                 <li><a href="<?php echo base_url()?>Main/loginpage">Masuk</a></li>
+                                <?php } ?>
+
                                 <li class="call-btn button gradient-bg mt-3 mt-md-0">
                                     <a class="d-flex justify-content-center align-items-center" href="#"><img src="<?php echo base_url()?>assets/images/emergency-call.png"> +34 586 778 8892</a>
                                 </li>
                             </ul>
                         </nav>
                         <!-- .site-navigation -->
+
+                        <!-- warning or success message -->
+                        <?php if($this->session->flashdata('warning'))
+                            {?>
+                                <div class="alert alert-danger"> <?php echo $this->session->flashdata('warning');?> </div><?php } ?>
+                        <?php if($this->session->flashdata('success'))
+                            {?>
+                                <div class="alert alert-success"> <?php echo $this->session->flashdata('success');?> </div><?php } ?>
+                        <!--/warning or success-->
                       
                         <div class="hamburger-menu d-lg-none">
                             <span></span>

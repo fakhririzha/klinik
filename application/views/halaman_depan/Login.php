@@ -42,29 +42,40 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<span>M</span>asuk
 		<span>K</span>linik</h1>
 	<!-- //title -->
+	
 	<!-- content -->
 	<div class="sub-main-w3">
-		<form action="#" method="post">
+		<form action="<?php echo base_url()?>Main/login" method="post">
+			<div class="form-style-agile">
+				<!-- warning or success message -->
+				<?php if($this->session->flashdata('warning'))
+					{?>
+						<div class="alert alert-danger"> <?php echo $this->session->flashdata('warning');?> </div><?php } ?>
+				<?php if($this->session->flashdata('success'))
+					{?>
+						<div class="alert alert-success"> <?php echo $this->session->flashdata('success');?> </div><?php } ?>
+				<!--/warning or success-->
+			</div>
 			<div class="form-style-agile">
 				<label>
 					Nama Pengguna
 					<i class="fas fa-user"></i>
 				</label>
-				<input placeholder="Namapengguna" name="Name" type="text" required="">
+				<input placeholder="Nama Pengguna" name="ed_nama" type="text" required>
 			</div>
 			<div class="form-style-agile">
 				<label>
 				Password
 					<i class="fas fa-unlock-alt"></i>
 				</label>
-				<input placeholder="Password" name="Password" type="password" required="">
+				<input placeholder="Password" name="ed_password" type="password" required>
 			</div>
 			<!-- checkbox -->
 			<div class="wthree-text">
 				<ul>
 					<li>
 						<label class="anim">
-							<input type="checkbox" class="checkbox" required="">
+							<input type="checkbox" class="checkbox">
 							<span>Ingat Saya</span>
 						</label>
 					</li>
