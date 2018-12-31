@@ -24,6 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</script>
 	<!-- Meta tag Keywords -->
 	<!-- css files -->
+	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/style.css" type="text/css" media="all" />
 	<!-- Style-CSS -->
 	<link rel="stylesheet" href="<?php echo base_url()?>assets/css/fontawesome-all.css">
