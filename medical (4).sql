@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 01:11 PM
--- Server version: 10.1.26-MariaDB
+-- Generation Time: 01 Jan 2019 pada 13.51
+-- Versi Server: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_pasien`
+-- Struktur dari tabel `data_pasien`
 --
 
 CREATE TABLE `data_pasien` (
@@ -39,16 +39,17 @@ CREATE TABLE `data_pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_pasien`
+-- Dumping data untuk tabel `data_pasien`
 --
 
 INSERT INTO `data_pasien` (`dp_id`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_lahir`, `dp_tanggal_lahir`, `dp_alamat`, `dp_nomor_telepon`) VALUES
-(1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346');
+(1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346'),
+(2, 'Muhammad Rafif Rasyidi', 'Pria', 'Kisaran', '2001-01-12', '', '085398652346');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_user`
+-- Struktur dari tabel `data_user`
 --
 
 CREATE TABLE `data_user` (
@@ -64,11 +65,12 @@ CREATE TABLE `data_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_user`
+-- Dumping data untuk tabel `data_user`
 --
 
 INSERT INTO `data_user` (`du_id`, `du_nama`, `du_jenis_kelamin`, `du_tempat_lahir`, `du_tanggal_lahir`, `du_alamat`, `du_nomor_telepon`, `du_password`, `du_role`) VALUES
-(1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346', '30b0dcf59de8699302d451d5450ab14d', 'pasien');
+(1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346', '30b0dcf59de8699302d451d5450ab14d', 'pasien'),
+(2, 'Muhammad Rafif Rasyidi', 'Pria', 'Kisaran', '2001-01-12', 'Jl. Stasiun', '085398652346', '1fb6fabe51b927968d5a1a0248d19f4f', 'pasien');
 
 --
 -- Indexes for dumped tables
@@ -94,13 +96,13 @@ ALTER TABLE `data_user`
 -- AUTO_INCREMENT for table `data_pasien`
 --
 ALTER TABLE `data_pasien`
-  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
