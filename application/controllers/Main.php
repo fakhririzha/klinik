@@ -6,27 +6,83 @@ class Main extends CI_Controller
     //fungsi utama untuk load halaman utama
     public function index()
     {
-        $this->load->view('halaman_depan/index');
+        $this->load->view('frontend/index');
     }
      public function contactpage()
     {
-        $this->load->view('halaman_depan/contact');
+        $this->load->view('frontend/contact');
     }
      public function aboutpage()
     {
-        $this->load->view('halaman_depan/about');
+        $this->load->view('frontend/about');
     }
      public function servicespage()
     {
-        $this->load->view('halaman_depan/services');
+        $this->load->view('frontend/services');
     }
      public function newspage()
     {
-        $this->load->view('halaman_depan/news');
+        $this->load->view('frontend/news');
+    }
+
+    public function newspage2()
+    {
+        $this->load->view('frontend/news2');
+    }
+
+    public function dokterpage()
+    {
+
+        $this->load->view('frontend/dokter');
+
+    }
+    public function detailpage()
+    {
+
+        $this->load->view('frontend/detail1');
+
+    }
+
+
+    public function detailpage2()
+    {
+
+        $this->load->view('frontend/detail2');
+
+    }
+
+
+    public function detailpage3()
+    {
+
+        $this->load->view('frontend/detail3');
+
+    }
+
+
+    public function detailpage4()
+    {
+
+        $this->load->view('frontend/detail4');
+
+    }
+
+    public function detailpage5()
+    {
+
+        $this->load->view('frontend/detail5');
+
+    }
+
+    public function detailpage6()
+    {
+
+        $this->load->view('frontend/detail6');
+
     }
     public function loginpage()
     {
-        $this->load->view('halaman_depan/login');
+        $this->load->view('frontend/login');
     }
 
     public function login()
