@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 06:16 PM
--- Server version: 10.1.26-MariaDB
+-- Generation Time: 01 Jan 2019 pada 23.57
+-- Versi Server: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_pasien`
+-- Struktur dari tabel `data_pasien`
 --
 
 CREATE TABLE `data_pasien` (
@@ -39,7 +39,7 @@ CREATE TABLE `data_pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_pasien`
+-- Dumping data untuk tabel `data_pasien`
 --
 
 INSERT INTO `data_pasien` (`dp_id`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_lahir`, `dp_tanggal_lahir`, `dp_alamat`, `dp_nomor_telepon`) VALUES
@@ -72,12 +72,20 @@ INSERT INTO `data_pasien` (`dp_id`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_la
 (27, 'Ikbal Pebriansyah', 'Pria', 'Palembang', '1999-04-04', '', '089863548174'),
 (28, 'Rangga Pratama Nugraha', 'Pria', 'Medan', '1999-10-24', '', '098954128745'),
 (29, 'Rangga Pratama Nugraha', 'Pria', 'Padang', '1999-10-24', '', '0989788537162'),
-(30, 'Baharuddin Budiman', 'Pria', 'Medan', '1998-01-02', '', '098976547621');
+(30, 'Baharuddin Budiman', 'Pria', 'Medan', '1998-01-02', '', '098976547621'),
+(31, 'Muhammad Ikhwan Nasution', 'Pria', 'Aileu', '1999-03-11', '', '087868475533'),
+(32, 'Heru Salim Siregar', 'Pria', 'Pekanbaru', '2011-12-19', '', '081374468531'),
+(33, 'Lia Rahmawati', 'Wanita', 'Padang Panjang', '2005-05-31', '', '087867789054'),
+(34, 'Yeni Azlia', 'Wanita', 'Solok Selatan', '0000-00-00', '', '085358768570'),
+(35, 'Fany Emiliani Pulungan', 'Wanita', 'Padang Sidimpuan', '1997-09-10', '', '085357657433'),
+(36, 'Tondi Mulia Raja Nasution', 'Pria', 'Pekanbaru', '2000-06-07', '', '131892107930'),
+(37, 'Faisal Lubis', 'Pria', 'Kota Nopan', '2007-07-23', '', '085354765090'),
+(38, 'Amidah Putriyani', 'Wanita', 'Sipirok', '0000-00-00', '', '085356709080');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_user`
+-- Struktur dari tabel `data_user`
 --
 
 CREATE TABLE `data_user` (
@@ -93,7 +101,7 @@ CREATE TABLE `data_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_user`
+-- Dumping data untuk tabel `data_user`
 --
 
 INSERT INTO `data_user` (`du_id`, `du_nama`, `du_jenis_kelamin`, `du_tempat_lahir`, `du_tanggal_lahir`, `du_alamat`, `du_nomor_telepon`, `du_password`, `du_role`) VALUES
@@ -126,7 +134,15 @@ INSERT INTO `data_user` (`du_id`, `du_nama`, `du_jenis_kelamin`, `du_tempat_lahi
 (27, 'Ikbal Pebriansyah', 'Pria', 'Palembang', '1999-04-04', 'Jl. Perjuangan No. 54b', '089863548174', 'e06af0884722e803b5725dfef5d6d5ee', 'pasien'),
 (28, 'Rangga Pratama Nugraha', 'Pria', 'Medan', '1999-10-24', 'Jl. Pimpinan No. 98', '098954128745', 'ae9cb7c1cd08c55c6915d1252fcc7cc8', 'pasien'),
 (29, 'Rangga Pratama Nugraha', 'Pria', 'Padang', '1999-10-24', 'Jl. Pimpinan No. 98', '0989788537162', 'ae9cb7c1cd08c55c6915d1252fcc7cc8', 'pasien'),
-(30, 'Baharuddin Budiman', 'Pria', 'Medan', '1998-01-02', 'Jl. Perjuangan No. 53', '098976547621', '20d4a29996b4cff0729eddec3be71766', 'pasien');
+(30, 'Baharuddin Budiman', 'Pria', 'Medan', '1998-01-02', 'Jl. Perjuangan No. 53', '098976547621', '20d4a29996b4cff0729eddec3be71766', 'pasien'),
+(31, 'Muhammad Ikhwan Nasution', 'Pria', 'aileu', '1999-03-11', 'Jl.Istiqomah panyabungan 3', '087868475533', 'ffdbb96a11e3167f08c9fdc91ad94b6d', 'pasien'),
+(32, 'Heru Salim Siregar', 'Pria', 'Pekanbaru', '2011-12-19', 'Jl. Bermula 7 Sipirok', '081374468531', '0a2fc1bbcd813bb0c58bfba89e3844f8', 'pasien'),
+(33, 'Lia Rahmawati', 'Wanita', 'Padang Panjang', '2005-05-31', 'komplek perumahan asri tebing tinggi', '087867789054', '9dbf18b7530c4d47c482ad37bc2b2e21', 'pasien'),
+(34, 'Yeni Azlia', 'Wanita', 'Solok Selatan', '0000-00-00', 'Padang Aro Solok Selatan', '085358768570', 'd41d8cd98f00b204e9800998ecf8427e', 'pasien'),
+(35, 'Fany Emiliani Pulungan', 'Wanita', 'Padang Sidimpuan', '1997-09-10', 'Jl. Gatot Subroto3 Padang Sidimpuan', '085357657433', '841003481b8726988c6b714747537e2c', 'pasien'),
+(36, 'Tondi Mulia Raja Nasution', 'Pria', 'Pekanbaru', '2000-06-07', 'Jl. Antara Kisaran', '131892107930', 'ec42f8596d4825b83f2663d5c51f6c27', 'pasien'),
+(37, 'Faisal Lubis', 'Pria', 'Kota Nopan', '2007-07-23', 'Jl. Lintas Barat Panyabungan', '085354765090', '6775d93a129d79b20ad200db9799a0e0', 'pasien'),
+(38, 'Amidah Putriyani', 'Wanita', 'Sipirok', '0000-00-00', 'Jl.lintas sipirok', '085356709080', 'd41d8cd98f00b204e9800998ecf8427e', 'pasien');
 
 --
 -- Indexes for dumped tables
@@ -152,13 +168,13 @@ ALTER TABLE `data_user`
 -- AUTO_INCREMENT for table `data_pasien`
 --
 ALTER TABLE `data_pasien`
-  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
