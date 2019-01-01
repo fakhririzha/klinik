@@ -8617,7 +8617,7 @@ if (jQuery) {
       weekdaysShort: ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
 
       // Materialize modified
-      weekdaysLetter: ['M', 'S', 'S', 'R', 'K', 'J', 'S'],
+      weekdaysLetter: ['Mi', 'Sn', 'Sl', 'Rb', 'Km', 'Jm', 'Sb'],
 
       // Today and clear
       today: 'Hari Ini',

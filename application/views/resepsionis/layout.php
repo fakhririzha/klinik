@@ -56,7 +56,7 @@
           <ul class="left">
             <li>
               <h1 class="logo-wrapper">
-                <a href="<?= site_url() ?>" class="brand-logo darken-1">
+                <a href="<?= base_url() ?>" class="brand-logo darken-1">
                   <img src="<?php echo base_url('assets/images/logo/materialize-logo.png')?>"
                     alt="Logo Klinik">
                   <span class="logo-text hide-on-med-and-down">Sistem Informasi Klinik</span>
@@ -94,7 +94,7 @@
                 <i class="material-icons">lock_outline</i> Lock</a>
             </li>
             <li>
-              <a href="<?= base_url('admin/logout') ?>"
+              <a href="<?= base_url('logout') ?>"
                 class="grey-text text-darken-1">
                 <i class="material-icons">keyboard_tab</i> Logout</a>
             </li>
@@ -131,7 +131,7 @@
                       <i class="material-icons">lock_outline</i> Lock</a>
                   </li>
                   <li>
-                    <a href="<?= base_url('admin/logout') ?>"
+                    <a href="<?= base_url('logout') ?>"
                       class="grey-text text-darken-1">
                       <i class="material-icons">keyboard_tab</i> Logout</a>
                   </li>
@@ -146,7 +146,7 @@
           <li class="no-padding">
             <ul class="collapsible" data-collapsible="accordion">
               <li class="bold">
-                <a href="<?= site_url() ?>" class="waves-effect waves-cyan">
+                <a href="<?= base_url() ?>" class="waves-effect waves-cyan">
                   <i class="material-icons">dashboard</i>
                   <span class="nav-text">Halaman Utama</span>
                 </a>
@@ -159,13 +159,13 @@
                 <div class="collapsible-body">
                   <ul>
                     <li>
-                      <a href="<?= site_url('admin/data_pasien') ?>"><i
+                      <a href="<?= base_url('resepsionis/pendaftaran_pasien') ?>"><i
                           class="material-icons">person_add</i>Pendaftaran Pasien</a></li>
                     <li>
-                      <a href="<?= site_url('admin/registrasi_pasien') ?>"><i
+                      <a href="<?= base_url('resepsionis/cetak_kartu_pasien') ?>"><i
                           class="material-icons">credit_card</i>Cetak Kartu Pasien</a></li>
                     <li>
-                      <a href="<?= site_url('admin/pemeriksaan_kesehatan') ?>"><i
+                      <a href="<?= base_url('resepsionis/list_pasien') ?>"><i
                           class="material-icons">person</i>List Pasien</a></li>
                   </ul>
                 </div>
@@ -178,10 +178,10 @@
                 <div class="collapsible-body">
                   <ul>
                     <li>
-                      <a href="<?= site_url('admin/e_payment') ?>"><i
-                          class="material-icons">add_to_queue</i>Ambil Nomor Antri </a></li>
+                      <a href="<?= base_url('resepsionis/ambil_no_antri') ?>"><i
+                          class="material-icons">add_to_queue</i>Ambil Nomor Antri</a></li>
                     <li>
-                      <a href="<?= site_url('admin/aktivasi_e_payment') ?>"><i
+                      <a href="<?= base_url('resepsionis/proses_antrian') ?>"><i
                           class="material-icons">recent_actors</i>Proses Antrian</a></li>
                   </ul>
                 </div>
