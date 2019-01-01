@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 02:05 PM
+-- Generation Time: Jan 01, 2019 at 02:20 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -45,7 +45,8 @@ CREATE TABLE `data_pasien` (
 INSERT INTO `data_pasien` (`dp_id`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_lahir`, `dp_tanggal_lahir`, `dp_alamat`, `dp_nomor_telepon`) VALUES
 (1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346'),
 (2, 'Muhammad Rafif Rasyidi', 'Pria', 'Kisaran', '2001-01-12', '', '085398652346'),
-(3, 'Ibnu Maulana', 'Pria', 'Medan', '1999-10-11', '', '0895611277834');
+(3, 'Ibnu Maulana', 'Pria', 'Medan', '1999-10-11', '', '0895611277834'),
+(4, 'Ananda Muharriz', 'Pria', 'Medan', '1998-01-31', '', '082276100819');
 
 -- --------------------------------------------------------
 
@@ -72,7 +73,8 @@ CREATE TABLE `data_user` (
 INSERT INTO `data_user` (`du_id`, `du_nama`, `du_jenis_kelamin`, `du_tempat_lahir`, `du_tanggal_lahir`, `du_alamat`, `du_nomor_telepon`, `du_password`, `du_role`) VALUES
 (1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346', '30b0dcf59de8699302d451d5450ab14d', 'pasien'),
 (2, 'Muhammad Rafif Rasyidi', 'Pria', 'Kisaran', '2001-01-12', 'Jl. Stasiun', '085398652346', '1fb6fabe51b927968d5a1a0248d19f4f', 'pasien'),
-(3, 'Ibnu Maulana', 'Pria', 'Medan', '1999-10-11', 'Ibrahim Umar No. 12', '0895611277834', '8ff1119461891dd5413a7afd39b6490d', 'pasien');
+(3, 'Ibnu Maulana', 'Pria', 'Medan', '1999-10-11', 'Ibrahim Umar No. 12', '0895611277834', '8ff1119461891dd5413a7afd39b6490d', 'pasien'),
+(4, 'Ananda Muharriz', 'Pria', 'Medan', '1998-01-31', 'Jalan Flamboyan No.120', '082276100819', '922ef08ebee9160f7a7d05ddda2828b1', 'pasien');
 
 --
 -- Indexes for dumped tables
@@ -98,13 +100,13 @@ ALTER TABLE `data_user`
 -- AUTO_INCREMENT for table `data_pasien`
 --
 ALTER TABLE `data_pasien`
-  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
