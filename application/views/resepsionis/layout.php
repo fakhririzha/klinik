@@ -8,7 +8,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Klinik kami selalu memberikan pelayanan terbaik dengan fasilitas prima.">
   <meta name="keywords" content="klinik, rumah sakit, rumah sakit terbaik, klinik terbaik">
-  <title><?php //echo $title;?>
+  <title><?php echo $title;?>
   </title>
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url('assets/images/favicon/favicon-32x32.png')?>"
