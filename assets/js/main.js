@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
-    $('#pasien').DataTable();
+    $('#tabel').DataTable();
+
+    $('.dataTables_length label select').addClass('browser-default');
 
 });
