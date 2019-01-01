@@ -9,6 +9,7 @@
 	<div class="card-panel white">
 	<br>
       <div class="row">
+			<center><h3>Pendaftaran Pasien</h3></center>
         <div class="input-field col s12">
           <input id="pd_nama" type="text" class="validate">
           <label for="password">Nama Lengkap</label>
@@ -22,37 +23,37 @@
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="text" class="validate">
           <label for="password">Tempat Lahir</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="date" class="validate">
           <label for="password">Tanggal Lahir</label>
         </div>
       </div>
 	  <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="text" class="validate">
           <label for="password">Alamat</label>
         </div>
       </div>
 	  <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="number" class="validate">
           <label for="password">Nomor Darurat</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+          <input id="email" type="number" class="validate">
           <label for="email">Nomor Wali</label>
         </div>
       </div>
 	  <div class="row">
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" type="text" class="validate">
           <label for="password">Relasi dengan Wali</label>
         </div>
       </div>
