@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 01, 2019 at 05:19 PM
+-- Generation Time: Jan 01, 2019 at 05:45 PM
 -- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
@@ -68,7 +68,9 @@ INSERT INTO `data_pasien` (`dp_id`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_la
 (23, 'Rizka Azzura Sirait', 'Wanita', 'Kisaran', '2001-04-28', '', '082277915101'),
 (24, 'Sasha Puspita Sari', 'Wanita', 'Binjai', '2004-08-19', '', '082219095101'),
 (25, 'Octavia Ramadhani', 'Wanita', 'Lubuk Pakam', '2002-01-09', '', '081255718201'),
-(26, 'Suryano', 'Pria', 'Tebing Tinggi', '2000-07-29', '', '082261799011');
+(26, 'Suryano', 'Pria', 'Tebing Tinggi', '2000-07-29', '', '082261799011'),
+(27, 'Ikbal Pebriansyah', 'Pria', 'Palembang', '1999-04-04', '', '089863548174'),
+(28, 'Rangga Pratama Nugraha', 'Pria', 'Medan', '1999-10-24', '', '098954128745');
 
 -- --------------------------------------------------------
 
@@ -118,7 +120,9 @@ INSERT INTO `data_user` (`du_id`, `du_nama`, `du_jenis_kelamin`, `du_tempat_lahi
 (23, 'Rizka Azzura Sirait', 'Wanita', 'Kisaran', '2001-04-28', 'Jalan Kamboja No.10 Kisaran', '082277915101', 'f2145825fc7e7df69e74d166e9152bfb', 'pasien'),
 (24, 'Sasha Puspita Sari', 'Wanita', 'Binjai', '2004-08-19', 'Jalan Sambu No.2 Binjai', '082219095101', '569da9fdce18e3490fe95a7fa421e3a8', 'pasien'),
 (25, 'Octavia Ramadhani', 'Wanita', 'Lubuk Pakam', '2002-01-09', 'Jalan Inang No.9 Komplek Surya Lubuk Pakam', '081255718201', '066157d3f4b8a5e5db79211b2db95f03', 'pasien'),
-(26, 'Suryano', 'Pria', 'Tebing Tinggi', '2000-07-29', 'Jalan Tapai No.120 Medan', '082261799011', 'c48fc56d867db500f3cc68d7a9eb2134', 'pasien');
+(26, 'Suryano', 'Pria', 'Tebing Tinggi', '2000-07-29', 'Jalan Tapai No.120 Medan', '082261799011', 'c48fc56d867db500f3cc68d7a9eb2134', 'pasien'),
+(27, 'Ikbal Pebriansyah', 'Pria', 'Palembang', '1999-04-04', 'Jl. Perjuangan No. 54b', '089863548174', 'e06af0884722e803b5725dfef5d6d5ee', 'pasien'),
+(28, 'Rangga Pratama Nugraha', 'Pria', 'Medan', '1999-10-24', 'Jl. Pimpinan No. 98', '098954128745', 'ae9cb7c1cd08c55c6915d1252fcc7cc8', 'pasien');
 
 --
 -- Indexes for dumped tables
@@ -144,13 +148,13 @@ ALTER TABLE `data_user`
 -- AUTO_INCREMENT for table `data_pasien`
 --
 ALTER TABLE `data_pasien`
-  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `dp_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `data_user`
 --
 ALTER TABLE `data_user`
-  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `du_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
