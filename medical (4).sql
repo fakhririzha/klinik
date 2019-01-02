@@ -3,8 +3,8 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 01 Jan 2019 pada 23.57
--- Versi Server: 10.1.26-MariaDB
+-- Generation Time: Jan 02, 2019 at 03:53 AM
+-- Server version: 10.1.26-MariaDB
 -- PHP Version: 7.1.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -25,11 +25,12 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_pasien`
+-- Table structure for table `data_pasien`
 --
 
 CREATE TABLE `data_pasien` (
   `dp_id` int(11) NOT NULL,
+  `dp_nik` varchar(16) NOT NULL,
   `dp_nama` varchar(75) NOT NULL,
   `dp_jenis_kelamin` enum('Pria','Wanita') NOT NULL,
   `dp_tempat_lahir` varchar(50) NOT NULL,
@@ -39,53 +40,53 @@ CREATE TABLE `data_pasien` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_pasien`
+-- Dumping data for table `data_pasien`
 --
 
-INSERT INTO `data_pasien` (`dp_id`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_lahir`, `dp_tanggal_lahir`, `dp_alamat`, `dp_nomor_telepon`) VALUES
-(1, 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346'),
-(2, 'Muhammad Rafif Rasyidi', 'Pria', 'Kisaran', '2001-01-12', '', '085398652346'),
-(3, 'Ibnu Maulana', 'Pria', 'Medan', '1999-10-11', '', '0895611277834'),
-(4, 'Ananda Muharriz', 'Pria', 'Medan', '1998-01-31', '', '082276100819'),
-(5, 'Dinul Iman', 'Pria', 'Bukitinggi', '2000-07-03', '', '085358547544'),
-(6, 'Abadi Tarigan', 'Pria', 'Binjai', '1998-02-10', '', '081292028690'),
-(7, 'Aini Wijaya', 'Wanita', 'Banda Aceh', '1999-10-12', '', '081347658901'),
-(8, 'Ali Hidayat', 'Pria', 'Medan', '1998-11-24', '', '082241789020'),
-(9, 'Allen Tampubolon', 'Pria', 'Brastagi', '1992-01-17', '', '082281905480'),
-(10, 'Allia Rania Sitorus', 'Wanita', 'Kisaran', '2006-01-19', '', '082170908854'),
-(11, 'Martinus Putra', 'Pria', 'Kisaran', '1999-11-13', '', '081222657890'),
-(12, 'Isnan Wildani Putra', 'Pria', 'Tanjung Balai', '1999-07-13', '', '082166784190'),
-(13, 'Haris Winanda Jaya', 'Pria', 'Batu Bara', '2002-08-13', '', '082267449088'),
-(14, 'Ryan Muthakin', 'Pria', 'Tebing Tinggi', '1998-07-25', '', '082276449077'),
-(15, 'Ihsan Malik Akhsal', 'Pria', 'Perbaungan', '1999-01-07', '', '081266888040'),
-(16, 'Fadhilla Nazwi Harahap', 'Wanita', 'Binjai', '1999-10-19', '', '081231567901'),
-(17, 'Putri Permata Sari', 'Wanita', 'Kisaran', '1998-08-11', '', '082256198020'),
-(18, 'Desi Arianti Silalahi', 'Wanita', 'Medan', '1999-01-14', '', '085322795101'),
-(19, 'Rayfa Armadina', 'Wanita', 'Kisaran', '1992-08-22', '', '08221680001'),
-(20, 'Yuyunda Hanum', 'Wanita', 'Kisaran', '1986-08-11', '', '082270189411'),
-(21, 'Muhammad Kenzie Ar-Rasyid', 'Pria', 'Banda Aceh', '1994-09-13', '', '082279018851'),
-(22, 'Nurhayati Purnama', 'Wanita', 'Kisaran', '2008-07-08', '', '082265718801'),
-(23, 'Rizka Azzura Sirait', 'Wanita', 'Kisaran', '2001-04-28', '', '082277915101'),
-(24, 'Sasha Puspita Sari', 'Wanita', 'Binjai', '2004-08-19', '', '082219095101'),
-(25, 'Octavia Ramadhani', 'Wanita', 'Lubuk Pakam', '2002-01-09', '', '081255718201'),
-(26, 'Suryano', 'Pria', 'Tebing Tinggi', '2000-07-29', '', '082261799011'),
-(27, 'Ikbal Pebriansyah', 'Pria', 'Palembang', '1999-04-04', '', '089863548174'),
-(28, 'Rangga Pratama Nugraha', 'Pria', 'Medan', '1999-10-24', '', '098954128745'),
-(29, 'Rangga Pratama Nugraha', 'Pria', 'Padang', '1999-10-24', '', '0989788537162'),
-(30, 'Baharuddin Budiman', 'Pria', 'Medan', '1998-01-02', '', '098976547621'),
-(31, 'Muhammad Ikhwan Nasution', 'Pria', 'Aileu', '1999-03-11', '', '087868475533'),
-(32, 'Heru Salim Siregar', 'Pria', 'Pekanbaru', '2011-12-19', '', '081374468531'),
-(33, 'Lia Rahmawati', 'Wanita', 'Padang Panjang', '2005-05-31', '', '087867789054'),
-(34, 'Yeni Azlia', 'Wanita', 'Solok Selatan', '0000-00-00', '', '085358768570'),
-(35, 'Fany Emiliani Pulungan', 'Wanita', 'Padang Sidimpuan', '1997-09-10', '', '085357657433'),
-(36, 'Tondi Mulia Raja Nasution', 'Pria', 'Pekanbaru', '2000-06-07', '', '131892107930'),
-(37, 'Faisal Lubis', 'Pria', 'Kota Nopan', '2007-07-23', '', '085354765090'),
-(38, 'Amidah Putriyani', 'Wanita', 'Sipirok', '0000-00-00', '', '085356709080');
+INSERT INTO `data_pasien` (`dp_id`, `dp_nik`, `dp_nama`, `dp_jenis_kelamin`, `dp_tempat_lahir`, `dp_tanggal_lahir`, `dp_alamat`, `dp_nomor_telepon`) VALUES
+(1, '', 'Fakhri Rizha Ananda', 'Pria', 'Medan', '2019-01-15', 'Jll. Sidodadi Komplek Johor Regency B6', '085398652346'),
+(2, '', 'Muhammad Rafif Rasyidi', 'Pria', 'Kisaran', '2001-01-12', '', '085398652346'),
+(3, '', 'Ibnu Maulana', 'Pria', 'Medan', '1999-10-11', '', '0895611277834'),
+(4, '', 'Ananda Muharriz', 'Pria', 'Medan', '1998-01-31', '', '082276100819'),
+(5, '', 'Dinul Iman', 'Pria', 'Bukitinggi', '2000-07-03', '', '085358547544'),
+(6, '', 'Abadi Tarigan', 'Pria', 'Binjai', '1998-02-10', '', '081292028690'),
+(7, '', 'Aini Wijaya', 'Wanita', 'Banda Aceh', '1999-10-12', '', '081347658901'),
+(8, '', 'Ali Hidayat', 'Pria', 'Medan', '1998-11-24', '', '082241789020'),
+(9, '', 'Allen Tampubolon', 'Pria', 'Brastagi', '1992-01-17', '', '082281905480'),
+(10, '', 'Allia Rania Sitorus', 'Wanita', 'Kisaran', '2006-01-19', '', '082170908854'),
+(11, '', 'Martinus Putra', 'Pria', 'Kisaran', '1999-11-13', '', '081222657890'),
+(12, '', 'Isnan Wildani Putra', 'Pria', 'Tanjung Balai', '1999-07-13', '', '082166784190'),
+(13, '', 'Haris Winanda Jaya', 'Pria', 'Batu Bara', '2002-08-13', '', '082267449088'),
+(14, '', 'Ryan Muthakin', 'Pria', 'Tebing Tinggi', '1998-07-25', '', '082276449077'),
+(15, '', 'Ihsan Malik Akhsal', 'Pria', 'Perbaungan', '1999-01-07', '', '081266888040'),
+(16, '', 'Fadhilla Nazwi Harahap', 'Wanita', 'Binjai', '1999-10-19', '', '081231567901'),
+(17, '', 'Putri Permata Sari', 'Wanita', 'Kisaran', '1998-08-11', '', '082256198020'),
+(18, '', 'Desi Arianti Silalahi', 'Wanita', 'Medan', '1999-01-14', '', '085322795101'),
+(19, '', 'Rayfa Armadina', 'Wanita', 'Kisaran', '1992-08-22', '', '08221680001'),
+(20, '', 'Yuyunda Hanum', 'Wanita', 'Kisaran', '1986-08-11', '', '082270189411'),
+(21, '', 'Muhammad Kenzie Ar-Rasyid', 'Pria', 'Banda Aceh', '1994-09-13', '', '082279018851'),
+(22, '', 'Nurhayati Purnama', 'Wanita', 'Kisaran', '2008-07-08', '', '082265718801'),
+(23, '', 'Rizka Azzura Sirait', 'Wanita', 'Kisaran', '2001-04-28', '', '082277915101'),
+(24, '', 'Sasha Puspita Sari', 'Wanita', 'Binjai', '2004-08-19', '', '082219095101'),
+(25, '', 'Octavia Ramadhani', 'Wanita', 'Lubuk Pakam', '2002-01-09', '', '081255718201'),
+(26, '', 'Suryano', 'Pria', 'Tebing Tinggi', '2000-07-29', '', '082261799011'),
+(27, '', 'Ikbal Pebriansyah', 'Pria', 'Palembang', '1999-04-04', '', '089863548174'),
+(28, '', 'Rangga Pratama Nugraha', 'Pria', 'Medan', '1999-10-24', '', '098954128745'),
+(29, '', 'Rangga Pratama Nugraha', 'Pria', 'Padang', '1999-10-24', '', '0989788537162'),
+(30, '', 'Baharuddin Budiman', 'Pria', 'Medan', '1998-01-02', '', '098976547621'),
+(31, '', 'Muhammad Ikhwan Nasution', 'Pria', 'Aileu', '1999-03-11', '', '087868475533'),
+(32, '', 'Heru Salim Siregar', 'Pria', 'Pekanbaru', '2011-12-19', '', '081374468531'),
+(33, '', 'Lia Rahmawati', 'Wanita', 'Padang Panjang', '2005-05-31', '', '087867789054'),
+(34, '', 'Yeni Azlia', 'Wanita', 'Solok Selatan', '0000-00-00', '', '085358768570'),
+(35, '', 'Fany Emiliani Pulungan', 'Wanita', 'Padang Sidimpuan', '1997-09-10', '', '085357657433'),
+(36, '', 'Tondi Mulia Raja Nasution', 'Pria', 'Pekanbaru', '2000-06-07', '', '131892107930'),
+(37, '', 'Faisal Lubis', 'Pria', 'Kota Nopan', '2007-07-23', '', '085354765090'),
+(38, '', 'Amidah Putriyani', 'Wanita', 'Sipirok', '0000-00-00', '', '085356709080');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `data_user`
+-- Table structure for table `data_user`
 --
 
 CREATE TABLE `data_user` (
@@ -101,7 +102,7 @@ CREATE TABLE `data_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `data_user`
+-- Dumping data for table `data_user`
 --
 
 INSERT INTO `data_user` (`du_id`, `du_nama`, `du_jenis_kelamin`, `du_tempat_lahir`, `du_tanggal_lahir`, `du_alamat`, `du_nomor_telepon`, `du_password`, `du_role`) VALUES
