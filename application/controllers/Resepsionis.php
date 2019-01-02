@@ -96,11 +96,12 @@ class Resepsionis extends CI_Controller
 
     public function pendaftaran_pasien_proses()
     {
+        //|regex_match[/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])?$/]
         if ($this->input->post('daftar') != '') {
             $this->form_validation->set_rules('dp_nama', 'Nama', 'required|trim|max_length[75]');
             $this->form_validation->set_rules('dp_jenis_kelamin', 'Jenis Kelamin', 'required|in_list[Pria,Wanita]');
             $this->form_validation->set_rules('dp_tempat_lahir', 'Tempat Lahir', 'required|trim|max_length[75]');
-            $this->form_validation->set_rules('dp_tanggal_lahir', 'Tanggal Lahir', 'required|regex_match[/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])?$/]');
+            $this->form_validation->set_rules('dp_tanggal_lahir', 'Tanggal Lahir', 'required');
             $this->form_validation->set_rules('dp_alamat', 'Alamat', 'required|trim|max_length[100]');
             $this->form_validation->set_rules('dp_nik', 'Nomor Telepon', 'required|numeric|exact_length[16]');
             $this->form_validation->set_rules('dp_nomor_telepon', 'Nomor Telepon', 'required|numeric|min_length[10]|max_length[13]');
@@ -120,7 +121,7 @@ class Resepsionis extends CI_Controller
                         'dp_id' => '',
                         'dp_nama' => $this->input->post('dp_nama'),
                         'dp_jenis_kelamin' => $this->input->post('dp_jenis_kelamin'),
-                        'dp_tempat_lahir' => ucwords($this->input->post('dp_tempat_lahir')),
+                        'dp_tempat_lahir' => $this->input->post('dp_tempat_lahir'),
                         'dp_tanggal_lahir' => $this->input->post('dp_tanggal_lahir'),
                         'dp_alamat' => $this->input->post('dp_alamat'),
                         'dp_nik' => $this->input->post('dp_nik'),
