@@ -56,7 +56,7 @@ class Manajer_sdm extends CI_Controller
         ];
 
         $this->load->vars($var);
-        $this->load->view('resepsionis/layout');
+        $this->load->view('manajer_sdm/layout');
     }
 
     public function tambah_pegawai()

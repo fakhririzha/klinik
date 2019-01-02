@@ -87,6 +87,12 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
+                <input name="dp_nik" type="text" class="" required>
+                <label for="dp_nik">NIK (Nomor Induk Kependudukan)</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s12">
                 <input name="dp_nomor_telepon" type="number" class="" required>
                 <label for="dp_nomor_telepon">Nomor Telepon</label>
               </div>

@@ -102,6 +102,7 @@ class Resepsionis extends CI_Controller
             $this->form_validation->set_rules('dp_tempat_lahir', 'Tempat Lahir', 'required|trim|max_length[75]');
             $this->form_validation->set_rules('dp_tanggal_lahir', 'Tanggal Lahir', 'required|regex_match[/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])?$/]');
             $this->form_validation->set_rules('dp_alamat', 'Alamat', 'required|trim|max_length[100]');
+            $this->form_validation->set_rules('dp_nik', 'Nomor Telepon', 'required|numeric|exact_length[16]');
             $this->form_validation->set_rules('dp_nomor_telepon', 'Nomor Telepon', 'required|numeric|min_length[10]|max_length[13]');
 
             if ($this->form_validation->run() == false) {
@@ -111,9 +112,7 @@ class Resepsionis extends CI_Controller
                 redirect('resepsionis/pendaftaran_pasien');
             } else {
                 $isDuplicate = $this->M->select_data_cond('data_pasien', [
-                    'dp_nama' => $this->input->post('dp_nama'),
-                    'dp_tanggal_lahir' => $this->input->post('dp_tanggal_lahir'),
-                    'dp_tempat_lahir' => ucwords($this->input->post('dp_tempat_lahir')),
+                    'dp_nik' => $this->input->post('dp_nik')
                 ])->num_rows();
 
                 if ($isDuplicate < 1) {
@@ -124,6 +123,7 @@ class Resepsionis extends CI_Controller
                         'dp_tempat_lahir' => ucwords($this->input->post('dp_tempat_lahir')),
                         'dp_tanggal_lahir' => $this->input->post('dp_tanggal_lahir'),
                         'dp_alamat' => $this->input->post('dp_alamat'),
+                        'dp_nik' => $this->input->post('dp_nik'),
                         'dp_nomor_telepon' => $this->input->post('dp_nomor_telepon')
                     ]);
 
