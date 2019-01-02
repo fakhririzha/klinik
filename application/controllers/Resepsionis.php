@@ -122,7 +122,7 @@ class Resepsionis extends CI_Controller
                         'dp_jenis_kelamin' => $this->input->post('dp_jenis_kelamin'),
                         'dp_tempat_lahir' => ucwords($this->input->post('dp_tempat_lahir')),
                         'dp_tanggal_lahir' => $this->input->post('dp_tanggal_lahir'),
-                        'dp_alamat' => $this->input->post('alamat'),
+                        'dp_alamat' => $this->input->post('dp_alamat'),
                         'dp_nomor_telepon' => $this->input->post('dp_nomor_telepon')
                     ]);
 
