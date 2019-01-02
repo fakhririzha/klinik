@@ -44,9 +44,13 @@
               <center>
                 <h3>Pendaftaran Pasien</h3>
               </center>
-              <div class="input-field col s12">
+              <div class="input-field col s11">
                 <input name="dp_nama" type="text" class="" required>
                 <label for="dp_nama">Nama Lengkap</label>
+              </div>
+              <div class="col s1">
+                <a class="btn-floating btn-small tooltipped grey lighten-2" data-position="bottom" data-tooltip="Hanya boleh mengandung karakter alfabet."
+                  style="margin-top:15px;"><i class="material-icons">help</i></a>
               </div>
             </div>
             <div class="row">
