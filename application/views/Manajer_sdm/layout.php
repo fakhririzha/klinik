@@ -8,7 +8,7 @@
   <meta name="msapplication-tap-highlight" content="no">
   <meta name="description" content="Klinik kami selalu memberikan pelayanan terbaik dengan fasilitas prima.">
   <meta name="keywords" content="klinik, rumah sakit, rumah sakit terbaik, klinik terbaik">
-  <title><?php //echo $title;?>
+  <title><?php echo $title;?>
   </title>
   <!-- Favicons-->
   <link rel="icon" href="<?php echo base_url('assets/images/favicon/favicon-32x32.png')?>"
@@ -56,7 +56,7 @@
           <ul class="left">
             <li>
               <h1 class="logo-wrapper">
-                <a href="<?= site_url() ?>" class="brand-logo darken-1">
+                <a href="<?= base_url() ?>" class="brand-logo darken-1">
                   <img src="<?php echo base_url('assets/images/logo/materialize-logo.png')?>"
                     alt="Logo Klinik">
                   <span class="logo-text hide-on-med-and-down">Sistem Informasi Klinik</span>
@@ -85,16 +85,7 @@
           <!-- profile-dropdown -->
           <ul id="profile-dropdown" class="dropdown-content">
             <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">face</i> Profile</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">lock_outline</i> Lock</a>
-            </li>
-            <li>
-              <a href="<?= base_url('admin/logout') ?>"
+              <a href="<?= base_url('logout') ?>"
                 class="grey-text text-darken-1">
                 <i class="material-icons">keyboard_tab</i> Logout</a>
             </li>
@@ -122,16 +113,7 @@
               <div class="col col s8 m8 l8">
                 <ul id="profile-dropdown-nav" class="dropdown-content">
                   <li>
-                    <a href="#" class="grey-text text-darken-1">
-                      <i class="material-icons">face</i> Profile</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#" class="grey-text text-darken-1">
-                      <i class="material-icons">lock_outline</i> Lock</a>
-                  </li>
-                  <li>
-                    <a href="<?= base_url('admin/logout') ?>"
+                    <a href="<?= base_url('logout') ?>"
                       class="grey-text text-darken-1">
                       <i class="material-icons">keyboard_tab</i> Logout</a>
                   </li>
@@ -139,14 +121,15 @@
                 <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#"
                   data-activates="profile-dropdown-nav"><?= $this->session->userdata('nama') ?><i
                     class="mdi-navigation-arrow-drop-down right"></i></a>
-                <p class="user-roal">Administrator</p>
+                <p class="user-roal">Manajer SDM</p>
               </div>
             </div>
           </li>
           <li class="no-padding">
             <ul class="collapsible" data-collapsible="accordion">
               <li class="bold">
-                <a href="<?= site_url() ?>" class="waves-effect waves-cyan">
+                <a href="<?= base_url('') ?>"
+                  class="waves-effect waves-cyan">
                   <i class="material-icons">dashboard</i>
                   <span class="nav-text">Halaman Utama</span>
                 </a>
@@ -159,10 +142,10 @@
                 <div class="collapsible-body">
                   <ul>
                     <li>
-                      <a href="<?= site_url('admin/data_pasien') ?>"><i
+                      <a href="<?= base_url('manajer_sdm/list_pegawai') ?>"><i
                           class="material-icons">list</i>List Pegawai</a></li>
                     <li>
-                      <a href="<?= site_url('admin/registrasi_pasien') ?>"><i
+                      <a href="<?= base_url('manajer_sdm/tambah_pegawai') ?>"><i
                           class="material-icons">group_add</i>Tambah Pegawai</a></li>
                   </ul>
                 </div>
@@ -175,13 +158,13 @@
                 <div class="collapsible-body">
                   <ul>
                     <li>
-                      <a href="<?= site_url('admin/e_payment') ?>"><i
+                      <a href="<?= base_url('manajer_sdm/jadwal_dokter') ?>"><i
                           class="material-icons">list</i>Jadwal Dokter</a></li>
                     <li>
-                      <a href="<?= site_url('admin/aktivasi_e_payment') ?>"><i
+                      <a href="<?= base_url('manajer_sdm/jadwal_piket') ?>"><i
                           class="material-icons">beenhere</i>Jadwal Piket</a></li>
                     <li>
-                      <a href="<?= site_url('admin/proses_transaksi') ?>"><i
+                      <a href="<?= base_url('manajer_sdm/jadwal_perawat') ?>"><i
                           class="material-icons">shopping_cart</i>Jadwal Perawat</a></li>
                   </ul>
                 </div>
