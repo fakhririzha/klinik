@@ -149,7 +149,7 @@ class Resepsionis extends CI_Controller
                     $this->session->set_flashdata('error_message', 'Pasien berhasil ditambahkan.');
                     redirect(base_url('resepsionis/pendaftaran_pasien'));
                 } else {
-                    $this->session->set_flashdata('error_message', 'Pasien telah terdaftar sebelumnya. Silahkan coba lagi.');
+                    $this->session->set_flashdata('error_message', 'Pasien telah terdaftar sebelumnya/ada data duplikat. Silahkan coba lagi.');
                     redirect(base_url('resepsionis/pendaftaran_pasien'));
                 }
             }
