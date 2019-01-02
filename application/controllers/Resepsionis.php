@@ -97,11 +97,12 @@ class Resepsionis extends CI_Controller
     public function pendaftaran_pasien_proses()
     {
         if ($this->input->post('daftar') != '') {
-            $this->form_validation->set_rules('dp_nama', 'Nama', 'trim|max_length[75]');
-            $this->form_validation->set_rules('dp_jenis_kelamin', 'Jenis Kelamin', 'in_list[Pria,Wanita]');
-            $this->form_validation->set_rules('dp_tempat_lahir', 'Tempat Lahir', 'trim|max_length[75]');
-            $this->form_validation->set_rules('dp_alamat', 'Alamat', 'trim|max_length[100]');
-            $this->form_validation->set_rules('dp_nomor_telepon', 'Nomor Telepon', 'numeric|min_length[10]|max_length[13]');
+            $this->form_validation->set_rules('dp_nama', 'Nama', 'required|trim|max_length[75]');
+            $this->form_validation->set_rules('dp_jenis_kelamin', 'Jenis Kelamin', 'required|in_list[Pria,Wanita]');
+            $this->form_validation->set_rules('dp_tempat_lahir', 'Tempat Lahir', 'required|trim|max_length[75]');
+            $this->form_validation->set_rules('dp_tanggal_lahir', 'Tanggal Lahir', 'required|regex_match[/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])?$/]');
+            $this->form_validation->set_rules('dp_alamat', 'Alamat', 'required|trim|max_length[100]');
+            $this->form_validation->set_rules('dp_nomor_telepon', 'Nomor Telepon', 'required|numeric|min_length[10]|max_length[13]');
 
             if ($this->form_validation->run() == false) {
                 $this->session->set_flashdata('validation_errors', 'true');
