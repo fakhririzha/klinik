@@ -85,15 +85,6 @@
           <!-- profile-dropdown -->
           <ul id="profile-dropdown" class="dropdown-content">
             <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">face</i> Profile</a>
-            </li>
-            <li class="divider"></li>
-            <li>
-              <a href="#" class="grey-text text-darken-1">
-                <i class="material-icons">lock_outline</i> Lock</a>
-            </li>
-            <li>
               <a href="<?= base_url('logout') ?>"
                 class="grey-text text-darken-1">
                 <i class="material-icons">keyboard_tab</i> Logout</a>
@@ -122,15 +113,6 @@
               <div class="col col s8 m8 l8">
                 <ul id="profile-dropdown-nav" class="dropdown-content">
                   <li>
-                    <a href="#" class="grey-text text-darken-1">
-                      <i class="material-icons">face</i> Profile</a>
-                  </li>
-                  <li class="divider"></li>
-                  <li>
-                    <a href="#" class="grey-text text-darken-1">
-                      <i class="material-icons">lock_outline</i> Lock</a>
-                  </li>
-                  <li>
                     <a href="<?= base_url('logout') ?>"
                       class="grey-text text-darken-1">
                       <i class="material-icons">keyboard_tab</i> Logout</a>
@@ -139,7 +121,7 @@
                 <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#"
                   data-activates="profile-dropdown-nav"><?= $this->session->userdata('nama') ?><i
                     class="mdi-navigation-arrow-drop-down right"></i></a>
-                <p class="user-roal">Administrator</p>
+                <p class="user-roal">Resepsionis</p>
               </div>
             </div>
           </li>
@@ -161,45 +143,46 @@
                     <li>
                       <a href="<?= base_url('resepsionis/pendaftaran_pasien') ?>"><i
                           class="material-icons">person_add</i>Pendaftaran Pasien</a></li>
-                    <li>
+                    <!-- <li>
                       <a href="<?= base_url('resepsionis/cetak_kartu_pasien') ?>"><i
-                          class="material-icons">credit_card</i>Cetak Kartu Pasien</a></li>
-                    <li>
-                      <a href="<?= base_url('resepsionis/list_pasien') ?>"><i
-                          class="material-icons">person</i>List Pasien</a></li>
-                  </ul>
-                </div>
-              </li>
-              <li class="bold">
-                <a class="collapsible-header waves-effect">
-                  <i class="material-icons">monetization_on</i>
-                  <span class="nav-text">Antrian</span>
-                </a>
-                <div class="collapsible-body">
-                  <ul>
-                    <li>
-                      <a href="<?= base_url('resepsionis/ambil_no_antri') ?>"><i
-                          class="material-icons">add_to_queue</i>Ambil Nomor Antri</a></li>
-                    <li>
-                      <a href="<?= base_url('resepsionis/proses_antrian') ?>"><i
-                          class="material-icons">recent_actors</i>Proses Antrian</a></li>
-                  </ul>
-                </div>
-              </li>
+                      class="material-icons">credit_card</i>Cetak Kartu Pasien</a>
+              </li> -->
+              <li>
+                <a href="<?= base_url('resepsionis/list_pasien') ?>"><i
+                    class="material-icons">person</i>List Pasien</a></li>
             </ul>
-          </li>
-        </ul>
-        <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
-          <i class="material-icons">menu</i>
-        </a>
-      </aside>
-      <!-- END LEFT SIDEBAR NAV-->
-      <!-- //////////////////////////////////////////////////////////////////////////// -->
-      <!-- START CONTENT -->
-      <?php $this->load->view($content)?>
-      <!-- END CONTENT -->
     </div>
-    <!-- END WRAPPER -->
+    </li>
+    <li class="bold">
+      <a class="collapsible-header waves-effect">
+        <i class="material-icons">monetization_on</i>
+        <span class="nav-text">Antrian</span>
+      </a>
+      <div class="collapsible-body">
+        <ul>
+          <li>
+            <a href="<?= base_url('resepsionis/ambil_no_antri') ?>"><i
+                class="material-icons">add_to_queue</i>Ambil Nomor Antri</a></li>
+          <li>
+            <a href="<?= base_url('resepsionis/proses_antrian') ?>"><i
+                class="material-icons">recent_actors</i>Proses Antrian</a></li>
+        </ul>
+      </div>
+    </li>
+    </ul>
+    </li>
+    </ul>
+    <a href="#" data-activates="slide-out" class="sidebar-collapse btn-floating btn-medium waves-effect waves-light hide-on-large-only">
+      <i class="material-icons">menu</i>
+    </a>
+    </aside>
+    <!-- END LEFT SIDEBAR NAV-->
+    <!-- //////////////////////////////////////////////////////////////////////////// -->
+    <!-- START CONTENT -->
+    <?php $this->load->view($content)?>
+    <!-- END CONTENT -->
+  </div>
+  <!-- END WRAPPER -->
   </div>
   <!-- END MAIN -->
   <!-- //////////////////////////////////////////////////////////////////////////// -->

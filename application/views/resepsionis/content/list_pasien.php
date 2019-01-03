@@ -27,8 +27,8 @@
                                 <th>Nama</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
-                                <th>No. Telp</th>
-                                <th>Form Pemeriksaan</th>
+                                <th>NIK</th>
+                                <th>Cetak Kartu</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -43,10 +43,10 @@
                                 </td>
                                 <td><?= $data->dp_jenis_kelamin ?>
                                 </td>
-                                <td><?= $data->dp_nomor_telepon ?>
+                                <td><?= $data->dp_nik ?>
                                 </td>
-                                <td><a class="waves-effect waves-light btn-floating" href="http://localhost/Klinik/admin/pemeriksaan_kesehatan_pasien/<?= $data->dp_id ?>"><i
-                                            class="material-icons left">local_hospital</i>
+                                <td><a class="waves-effect waves-light btn-floating" href="http://localhost/Klinik/resepsionis/cetak_kartu_pasien/<?= $data->dp_nik ?>"><i
+                                            class="material-icons left">print</i>
                                         Edit</a>
                                 </td>
                             </tr>
