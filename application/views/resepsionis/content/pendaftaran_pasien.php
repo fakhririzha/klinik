@@ -57,6 +57,7 @@
               <div class="col s6 m4 l3">
                 <p>Jenis Kelamin
                 </p>
+				
                 <p>
                   <label>
                     <input class="with-gap" name="dp_jenis_kelamin" type="radio" value="Pria" required />
@@ -72,33 +73,53 @@
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
-                <input name="dp_tempat_lahir" type="text" class="" required>
+              <div class="input-field col s11">
+                 <input name="dp_tempat_lahir" type="text" class="" required>
                 <label for="dp_tempat_lahir">Tempat Lahir</label>
+              </div>
+			  <div class="col s1">
+                <a class="btn-floating btn-small tooltipped grey lighten-2" data-position="bottom" data-tooltip="Masukkan kota lahir anda"
+                  style="margin-top:15px;"><i class="material-icons">help</i></a>
               </div>
             </div>
             <div class="row">
-              <div class="col s12">
+              <div class="col s11">
                 <label for="dp_tanggal_lahir">Tanggal Lahir</label>
                 <input placeholder="YYYY-MM-DD" name="dp_tanggal_lahir" type="text" class="datepicker" required>
               </div>
+			 <div class="col s1">
+                <a class="btn-floating btn-small tooltipped grey lighten-2" data-position="bottom" data-tooltip="Masukkan tanggal lahir anda formatnya tahun/bulan/hari"
+                  style="margin-top:15px;"><i class="material-icons">help</i></a>
+              </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s11">
                 <input name="dp_alamat" type="text" class="" required>
                 <label for="dp_alamat">Alamat</label>
               </div>
-            </div>
-            <div class="row">
-              <div class="input-field col s12">
-                <input name="dp_nik" type="text" class="" required>
-                <label for="dp_nik">NIK (Nomor Induk Kependudukan)</label>
+			  <div class="col s1">
+                <a class="btn-floating btn-small tooltipped grey lighten-2" data-position="bottom" data-tooltip="Masukkan alamat lengkap anda"
+                  style="margin-top:15px;"><i class="material-icons">help</i></a>
               </div>
             </div>
             <div class="row">
-              <div class="input-field col s12">
+              <div class="input-field col s11">
+                <input name="dp_nik" type="text" class="" required>
+                <label for="dp_nik">NIK (Nomor Induk Kependudukan)</label>
+              </div>
+			  <div class="col s1">
+                <a class="btn-floating btn-small tooltipped grey lighten-2" data-position="bottom" data-tooltip="Masukkan 16 digit Nomor Kependudukan anda"
+                  style="margin-top:15px;"><i class="material-icons">help</i></a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="input-field col s11">
                 <input name="dp_nomor_telepon" type="number" class="" required>
                 <label for="dp_nomor_telepon">Nomor Telepon</label>
+              </div>
+			  <div class="col s1">
+                <a class="btn-floating btn-small tooltipped grey lighten-2" data-position="bottom" data-tooltip="Hanya boleh mengandung karakter angka"
+                  style="margin-top:15px;"><i class="material-icons">help</i></a>
               </div>
             </div>
             <br>
