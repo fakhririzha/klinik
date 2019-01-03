@@ -28,12 +28,12 @@ class Main_model extends CI_Model
         $condition_formatted = [];
         $data_formatted = [];
 
-        foreach ($kondisi as $key => $value) {
-            array_push($condition_formatted, "$key=$value");
-        }
-
         foreach ($data as $key => $value) {
             array_push($data_formatted, "$key='$value'");
+        }
+
+        foreach ($kondisi as $key => $value) {
+            array_push($condition_formatted, "$key='$value'");
         }
 
         $query = $this->db->query('UPDATE ' . $namatabel . ' SET ' . implode(', ', $data_formatted) . ' WHERE ' . implode(' AND ', $condition_formatted) . '');

@@ -61,14 +61,91 @@ class Resepsionis extends CI_Controller
 
     public function ambil_no_antri()
     {
+        $query_latest_antrian = $this->M->select_data_cond('data_antrian', ['da_tanggal' => date('Y-m-d')]);
+        if ($query_latest_antrian->num_rows() < 1) {
+            $insert = $this->M->insert_data('data_antrian', [
+                'da_tanggal' => date('Y-m-d'),
+                'da_nomor' => 1,
+                'da_status' => 'belum_dipanggil'
+            ]);
+        }
+        $hari_ini = date('Y-m-d');
+
+        $latest_antrian = $this->db->query("SELECT * FROM data_antrian WHERE da_tanggal='$hari_ini' AND da_status='belum_dipanggil' ORDER BY da_nomor DESC LIMIT 1")->row_array();
+        $latest_antrian_num = $latest_antrian['da_nomor'];
+
+        $latest_dipanggil = $this->db->query("SELECT * FROM data_antrian WHERE da_tanggal='$hari_ini' AND da_status='sedang_dipanggil' ORDER BY da_nomor DESC LIMIT 1")->row_array();
+        $latest_dipanggil_num = $latest_dipanggil['da_nomor'];
+
         $var = [
             'title' => 'Ambil Antrian',
             'content' => '/resepsionis/content/ambil_no_antri',
-            'breadcrumbs' => explode('/', 'resepsionis/ambil_no_antri')
+            'breadcrumbs' => explode('/', 'resepsionis/ambil_no_antri'),
+            'latest_antrian' => $latest_antrian_num,
+            'latest_dipanggil' => $latest_dipanggil_num
         ];
 
         $this->load->vars($var);
         $this->load->view('resepsionis/layout');
+    }
+
+    public function ambil_no_antri_proses()
+    {
+        if ($this->input->post('ambil') != '') {
+            $insert = $this->M->insert_data('data_antrian', [
+                'da_tanggal' => date('Y-m-d'),
+                'da_nomor' => $this->input->post('antrian_selanjutnya'),
+                'da_status' => 'belum_dipanggil'
+            ]);
+            redirect(base_url('resepsionis/ambil_no_antri'));
+        } else {
+            redirect(base_url(''));
+        }
+    }
+
+    public function proses_antrian()
+    {
+        $hari_ini = date('Y-m-d');
+        $query_latest_antrian = $this->M->select_data_cond('data_antrian', [
+            'da_tanggal' => $hari_ini,
+            'da_status' => 'belum_dipanggil'
+        ]);
+        if ($query_latest_antrian->num_rows() < 1) {
+            echo "<script>alert('Antrian telah semuanya terpanggil, silahkan ambil nomor antrian terlebih dahulu!')</script>";
+            redirect(base_url('resepsionis/ambil_no_antri'));
+        } else {
+            $latest_antrian = $this->db->query("SELECT * FROM data_antrian WHERE da_tanggal='$hari_ini' AND da_status='belum_dipanggil' ORDER BY da_nomor ASC LIMIT 1")->row_array();
+            $latest_antrian_num = $latest_antrian['da_nomor'];
+        }
+        $var = [
+            'title' => 'Proses Antrian',
+            'content' => '/resepsionis/content/proses_antrian',
+            'breadcrumbs' => explode('/', 'resepsionis/proses_antrian'),
+            'latest_antrian' => $latest_antrian_num
+        ];
+
+        $this->load->vars($var);
+        $this->load->view('resepsionis/layout');
+    }
+
+    public function proses_antrian_proses()
+    {
+        if ($this->input->post('panggil') != '') {
+            $update = $this->M->update_data(
+                'data_antrian',
+                [
+                    'da_status' => 'sedang_dipanggil'
+                ],
+                [
+                    'da_nomor' => $this->input->post('antrian_panggil'),
+                    'da_tanggal' => date('Y-m-d')
+                ]
+            );
+            var_dump($update);
+            redirect(base_url('resepsionis/proses_antrian'));
+        } else {
+            redirect(base_url(''));
+        }
     }
 
     public function cetak_kartu_pasien($dp_nik)
