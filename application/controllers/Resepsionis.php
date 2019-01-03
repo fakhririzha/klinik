@@ -176,7 +176,7 @@ class Resepsionis extends CI_Controller
     {
         //|regex_match[/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])?$/]
         if ($this->input->post('daftar') != '') {
-            $this->form_validation->set_rules('dp_nama', 'Nama', 'required|trim|max_length[75]');
+            $this->form_validation->set_rules('dp_nama', 'Namax', 'required|trim|max_length[75]');
             $this->form_validation->set_rules('dp_jenis_kelamin', 'Jenis Kelamin', 'required|in_list[Pria,Wanita]');
             $this->form_validation->set_rules('dp_tempat_lahir', 'Tempat Lahir', 'required|trim|max_length[75]');
             $this->form_validation->set_rules('dp_tanggal_lahir', 'Tanggal Lahir', 'required');
@@ -232,7 +232,7 @@ class Resepsionis extends CI_Controller
                     ];
 
                     $this->session->set_userdata($session);
-                    $this->session->set_flashdata('error_message', 'Pasien berhasil ditambahkan.');
+                    $this->session->set_flashdata('success_message', 'Pasien berhasil ditambahkan.');
                     redirect(base_url('resepsionis/pendaftaran_pasien'));
                 } else {
                     $this->session->set_flashdata('error_message', 'Pasien telah terdaftar sebelumnya. Silahkan coba lagi.');
