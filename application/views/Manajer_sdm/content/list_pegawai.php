@@ -27,7 +27,7 @@
                                 <th>Nama</th>
                                 <th>Tanggal Lahir</th>
                                 <th>Jenis Kelamin</th>
-                                <th>Tingkatan User</th>
+                                <th>Jabatan</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -42,7 +42,7 @@
                                 </td>
                                 <td><?= $data->du_jenis_kelamin ?>
                                 </td>
-                                <td><?= ucwords(str_replace('_', ' ', $data->du_role)) ?>
+                                <td><?= ucwords(str_replace('_', ' ', str_replace('sdm', 'SDM', $data->du_role))) ?>
                                 </td>
                             </tr>
 

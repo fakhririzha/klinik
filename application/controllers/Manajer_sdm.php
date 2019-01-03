@@ -107,13 +107,6 @@ class Manajer_sdm extends CI_Controller
                         'du_role' => $this->input->post('du_role')
                     ]);
 
-                    $session = [
-                        'id' => $this->M->getLastInserted('du_id', 'data_user', 'du_nama', $this->input->post('du_nama')),
-                        'nama' => $this->input->post('du_nama'),
-                        'role' => $this->input->post('du_role')
-                    ];
-
-                    $this->session->set_userdata($session);
                     $this->session->set_flashdata('error_message', 'Pegawai berhasil ditambahkan.');
                     redirect(base_url('manajer_sdm/tambah_pegawai'));
                 } else {

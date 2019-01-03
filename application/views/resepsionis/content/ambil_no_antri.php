@@ -11,16 +11,16 @@
 		<h5>Terakhir dipanggil&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</h5>
 	</div>
 	<div class="col s2">
-		<div class="card-panel white">
-			<h1>&nbsp;<?= $latest_antrian ?>
+		<div class="card-panel blue white-text">
+			<h1>&nbsp;&nbsp;<?= $latest_antrian ?>
 			</h1>
 		</div>
-		<div class="card-panel white">
-			<h1>&nbsp;<?= $latest_antrian + 1 ?>
+		<div class="card-panel green white-text">
+			<h1>&nbsp;&nbsp;<?= $latest_antrian + 1 ?>
 			</h1>
 		</div>
-		<div class="card-panel white">
-			<h1>&nbsp;<?= $latest_dipanggil ?>
+		<div class="card-panel red white-text">
+			<h1>&nbsp;&nbsp;<?= $latest_dipanggil ?>
 			</h1>
 		</div>
 	</div>
