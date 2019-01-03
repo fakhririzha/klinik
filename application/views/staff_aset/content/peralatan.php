@@ -4,8 +4,58 @@
 	<div class="col s8">
 	<h3>Daftar Peralatan</h3>
 	<br><br>
-	<button class="btn waves-effect blue" type="submit" name="action">Tambah data
-		<i class="material-icons right">add</i>
+	<!--awal modal-->
+	 <button data-target="modal1" class="btn modal-trigger waves-effect blue">Tambah Data<i class="material-icons right">add</i></button>
+	 <!-- Modal Structure -->
+  <div id="modal1" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <div class="row">
+			<center><h3>Tambah Data Peralatan</h3></center>
+			<br>
+		</center>
+		<div class="col s2">
+		</div>
+        <div class="input-field col s8">
+          <input id="pd_nama" type="text" class="validate">
+          <label for="password">ID Peralatan</label>
+        </div>
+      </div>
+	  <div class="row">
+	  <div class="col s2">
+		</div>
+        <div class="input-field col s8">
+          <input id="pd_jenis_kelamin" type="text" class="validate">
+          <label for="password">Nama Peralatan</label>
+        </div>
+      </div>
+      <div class="row">
+	  <div class="col s2">
+		</div>
+        <div class="input-field col s8">
+          <input id="password" type="text" class="validate">
+          <label for="password">Harga Peralatan</label>
+        </div>
+      </div>
+      <div class="row">
+	  <div class="col s2">
+		</div>
+        <div class="input-field col s8">
+          <input id="password" type="date" class="validate">
+          <label for="password">Kuantitas Peralatan</label>
+        </div>
+      </div>
+	  </center>
+	  <br>
+	  <div class="col s8"></div>
+	  <div class="col s4">
+	 </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+	  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
+    </div>
+  </div>
+  <!--modal berakhir-->
 	 </button>
 	<br><br>
  <table class="striped centered">
