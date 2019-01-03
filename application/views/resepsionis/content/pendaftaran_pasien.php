@@ -30,6 +30,11 @@
           <span class="white-text"><?= $this->session->flashdata('error_message') ?></span>
         </div>
         <?php endif; ?>
+        <?php if ($this->session->flashdata('success_message') != ''): ?>
+        <div class="card-panel green">
+          <span class="white-text"><?= $this->session->flashdata('success_message') ?></span>
+        </div>
+        <?php endif; ?>
       </div>
     </div>
     <div class="col s2"></div>

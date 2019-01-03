@@ -98,7 +98,7 @@ class Resepsionis extends CI_Controller
     {
         //|regex_match[/^([0-9]{2,4})-([0-1][0-9])-([0-3][0-9])?$/]
         if ($this->input->post('daftar') != '') {
-            $this->form_validation->set_rules('dp_nama', 'Nama', 'required|trim|max_length[75]');
+            $this->form_validation->set_rules('dp_nama', 'Namax', 'required|trim|max_length[75]');
             $this->form_validation->set_rules('dp_jenis_kelamin', 'Jenis Kelamin', 'required|in_list[Pria,Wanita]');
             $this->form_validation->set_rules('dp_tempat_lahir', 'Tempat Lahir', 'required|trim|max_length[75]');
             $this->form_validation->set_rules('dp_tanggal_lahir', 'Tanggal Lahir', 'required');
@@ -119,12 +119,12 @@ class Resepsionis extends CI_Controller
                 if ($isDuplicate < 1) {
                     $query = $this->M->insert_data('data_pasien', [
                         'dp_id' => '',
+                        'dp_nik' => $this->input->post('dp_nik'),
                         'dp_nama' => $this->input->post('dp_nama'),
                         'dp_jenis_kelamin' => $this->input->post('dp_jenis_kelamin'),
                         'dp_tempat_lahir' => $this->input->post('dp_tempat_lahir'),
                         'dp_tanggal_lahir' => $this->input->post('dp_tanggal_lahir'),
                         'dp_alamat' => $this->input->post('dp_alamat'),
-                        'dp_nik' => $this->input->post('dp_nik'),
                         'dp_nomor_telepon' => $this->input->post('dp_nomor_telepon')
                     ]);
 
@@ -147,7 +147,7 @@ class Resepsionis extends CI_Controller
                     ];
 
                     $this->session->set_userdata($session);
-                    $this->session->set_flashdata('error_message', 'Pasien berhasil ditambahkan.');
+                    $this->session->set_flashdata('success_message', 'Pasien berhasil ditambahkan.');
                     redirect(base_url('resepsionis/pendaftaran_pasien'));
                 } else {
                     $this->session->set_flashdata('error_message', 'Pasien telah terdaftar sebelumnya/ada data duplikat. Silahkan coba lagi.');
