@@ -7,23 +7,23 @@ class Resepsionis extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        // if ($this->session->userdata('role') == 'admin') {
-        //     redirect(base_url('admin'));
-        // } elseif ($this->session->userdata('role') == 'kasir') {
-        //     redirect(base_url('kasir'));
-        // } elseif ($this->session->userdata('role') == 'manajer_sdm') {
-        //     redirect(base_url('manajer_sdm'));
-        // } elseif ($this->session->userdata('role') == 'staff_aset') {
-        //     redirect(base_url('staff_aset'));
-        // } elseif ($this->session->userdata('role') == 'staff_kesehatan') {
-        //     redirect(base_url('staff_kesehatan'));
-        // } elseif ($this->session->userdata('role') == 'staff_keuangan') {
-        //     redirect(base_url('staff_keuangan'));
-        // } elseif ($this->session->userdata('role') == 'pasien') {
-        //     redirect(base_url('pasien'));
-        // } elseif ($this->session->userdata('role') == '') {
-        //     redirect(base_url(''));
-        // }
+        if ($this->session->userdata('role') == 'admin') {
+            redirect(base_url('admin'));
+        } elseif ($this->session->userdata('role') == 'kasir') {
+            redirect(base_url('kasir'));
+        } elseif ($this->session->userdata('role') == 'manajer_sdm') {
+            redirect(base_url('manajer_sdm'));
+        } elseif ($this->session->userdata('role') == 'staff_aset') {
+            redirect(base_url('staff_aset'));
+        } elseif ($this->session->userdata('role') == 'staff_kesehatan') {
+            redirect(base_url('staff_kesehatan'));
+        } elseif ($this->session->userdata('role') == 'staff_keuangan') {
+            redirect(base_url('staff_keuangan'));
+        } elseif ($this->session->userdata('role') == 'pasien') {
+            redirect(base_url('pasien'));
+        } elseif ($this->session->userdata('role') == '') {
+            redirect(base_url(''));
+        }
         $this->load->library('user_management');
         $this->load->library('data_konvertor');
         $this->load->model('Main_model', 'M');
@@ -71,15 +71,16 @@ class Resepsionis extends CI_Controller
         $this->load->view('resepsionis/layout');
     }
 
-    public function cetak_kartu_pasien($pd_id)
+    public function cetak_kartu_pasien($dp_nik)
     {
         $var = [
             'title' => 'Cetak Kartu',
-            'content' => '/resepsionis/content/cetak_kartu_pasien'
+            // 'content' => '/resepsionis/content/cetak_kartu_pasien'
+            'pasien' => $this->M->select_data_cond('data_pasien', ['dp_nik' => $dp_nik])->result()
         ];
 
         $this->load->vars($var);
-        $this->load->view('resepsionis/layout');
+        $this->load->view('resepsionis/content/cetak_kartu_pasien');
     }
 
     public function pendaftaran_pasien()
@@ -140,6 +141,13 @@ class Resepsionis extends CI_Controller
                         'du_role' => 'pasien'
                     ]);
 
+                    $query3 = $this->M->insert_data('e_payment', [
+                        'ep_id' => '',
+                        'dp_id' => $this->M->getLastInserted('dp_id', 'data_pasien', 'dp_nik', $this->input->post('dp_nik')),
+                        'ep_saldo' => 0,
+                        'ep_status' => 'tidak_aktif'
+                    ]);
+
                     $session = [
                         'id' => $this->M->getLastInserted('du_id', 'data_user', 'du_nama', $this->input->post('du_nama')),
                         'nama' => $this->input->post('du_nama'),
@@ -150,7 +158,7 @@ class Resepsionis extends CI_Controller
                     $this->session->set_flashdata('success_message', 'Pasien berhasil ditambahkan.');
                     redirect(base_url('resepsionis/pendaftaran_pasien'));
                 } else {
-                    $this->session->set_flashdata('error_message', 'Pasien telah terdaftar sebelumnya/ada data duplikat. Silahkan coba lagi.');
+                    $this->session->set_flashdata('error_message', 'Pasien telah terdaftar sebelumnya. Silahkan coba lagi.');
                     redirect(base_url('resepsionis/pendaftaran_pasien'));
                 }
             }
