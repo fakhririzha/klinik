@@ -34,7 +34,8 @@ class Resepsionis extends CI_Controller
         $var = [
             'title' => 'Resepsionis',
             'content' => '/resepsionis/content/main',
-            'breadcrumbs' => explode('/', 'resepsionis')
+            'breadcrumbs' => explode('/', 'resepsionis'),
+            'jumlah_pasien' => $this->M->select_data('data_pasien')->num_rows()
         ];
 
         $this->load->vars($var);
@@ -50,7 +51,7 @@ class Resepsionis extends CI_Controller
             'pasien' => $this->M->select_data_column(
                 'data_pasien',
                 [
-                    'dp_id', 'dp_nama', 'dp_tanggal_lahir', 'dp_jenis_kelamin', 'dp_nomor_telepon'
+                    'dp_id', 'dp_nik', 'dp_nama', 'dp_tanggal_lahir', 'dp_jenis_kelamin', 'dp_nomor_telepon'
                 ]
             )->result()
         ];
@@ -196,7 +197,7 @@ class Resepsionis extends CI_Controller
 
                 if ($isDuplicate < 1) {
                     $query = $this->M->insert_data('data_pasien', [
-                        'dp_id' => '',
+                        'dp_id' => null,
                         'dp_nik' => $this->input->post('dp_nik'),
                         'dp_nama' => $this->input->post('dp_nama'),
                         'dp_jenis_kelamin' => $this->input->post('dp_jenis_kelamin'),
@@ -207,7 +208,7 @@ class Resepsionis extends CI_Controller
                     ]);
 
                     $query2 = $this->M->insert_data('data_user', [
-                        'du_id' => '',
+                        'du_id' => null,
                         'du_nama' => $this->input->post('dp_nama'),
                         'du_jenis_kelamin' => $this->input->post('dp_jenis_kelamin'),
                         'du_tempat_lahir' => $this->input->post('dp_tempat_lahir'),
@@ -219,17 +220,11 @@ class Resepsionis extends CI_Controller
                     ]);
 
                     $query3 = $this->M->insert_data('e_payment', [
-                        'ep_id' => '',
+                        'ep_id' => null,
                         'dp_id' => $this->M->getLastInserted('dp_id', 'data_pasien', 'dp_nik', $this->input->post('dp_nik')),
                         'ep_saldo' => 0,
                         'ep_status' => 'tidak_aktif'
                     ]);
-
-                    $session = [
-                        'id' => $this->M->getLastInserted('du_id', 'data_user', 'du_nama', $this->input->post('du_nama')),
-                        'nama' => $this->input->post('du_nama'),
-                        'role' => 'pasien'
-                    ];
 
                     $this->session->set_userdata($session);
                     $this->session->set_flashdata('success_message', 'Pasien berhasil ditambahkan.');

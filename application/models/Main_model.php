@@ -75,7 +75,7 @@ class Main_model extends CI_Model
         $column_formatted = [];
 
         foreach ($condition as $key => $value) {
-            array_push($condition_formatted, "$key=$value");
+            array_push($condition_formatted, "$key='$value'");
         }
 
         foreach ($column as $key => $value) {

@@ -45,8 +45,8 @@
                                 </td>
                                 <td><?= $data->dp_nik ?>
                                 </td>
-                                <td><a class="waves-effect waves-light btn-floating" href="http://localhost/Klinik/resepsionis/cetak_kartu_pasien/<?= $data->dp_nik ?>"><i
-                                            class="material-icons left">print</i>
+                                <td><a class="waves-effect waves-light btn-floating" href="http://localhost/Klinik/resepsionis/cetak_kartu_pasien/<?= $data->dp_nik ?>"
+                                        target="_blank"><i class="material-icons left">print</i>
                                         Edit</a>
                                 </td>
                             </tr>
