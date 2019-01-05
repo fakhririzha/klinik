@@ -19,7 +19,7 @@
           <tr>
             <td>Alvin</td>
             <td>Eclair</td>
-			<th> <!-- Modal Trigger -->
+			<td> <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Aktivasi E-pay</a>
 
   <!-- Modal Structure -->
@@ -50,7 +50,7 @@
           <tr>
             <td>Alan</td>
             <td>Jellybean</td>
-			<th> <!-- Modal Trigger -->
+			<td> <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Aktivasi E-pay</a>
 
   <!-- Modal Structure -->
@@ -76,15 +76,16 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
 	  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
-  </div></th>
+  </div></td>
           </tr>
           <tr>
             <td>Jonathan</td>
             <td>Lollipop</td>
-			<th> <!-- Modal Trigger -->
+			<td> <!-- Modal Trigger -->
   <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Aktivasi E-pay</a>
 
-  <!-- Modal Structure -->
+  <!-- Moda
+  l Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h4><center>Aktivasi E-pay</center></h4>
@@ -107,7 +108,7 @@
       <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
 	  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
     </div>
-  </div></th>
+  </div></td>
           </tr>
         </tbody>
  </table>

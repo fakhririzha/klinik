@@ -19,7 +19,7 @@
           <tr>
             <td>Alvin</td>
             <td>Eclair</td>
-			<th><button data-target="modal1" class="btn modal-trigger waves-effect blue">Top-Up</button>
+			<td><button data-target="modal1" class="btn modal-trigger waves-effect blue">Top-Up</button>
 	 <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -62,12 +62,12 @@
 	  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Submit</a>
     </div>
   </div>
-  <!--modal berakhir--></th>
+  <!--modal berakhir--></td>
           </tr>
           <tr>
             <td>Alan</td>
             <td>Jellybean</td>
-			<th><button data-target="modal1" class="btn modal-trigger waves-effect blue">Top-Up</button>
+			<td><button data-target="modal1" class="btn modal-trigger waves-effect blue">Top-Up</button>
 	 <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -114,7 +114,7 @@
           <tr>
             <td>Jonathan</td>
             <td>Lollipop</td>
-			<th><button data-target="modal1" class="btn modal-trigger waves-effect blue">Top-Up</button>
+			<td><button data-target="modal1" class="btn modal-trigger waves-effect blue">Top-Up</button>
 	 <!-- Modal Structure -->
   <div id="modal1" class="modal modal-fixed-footer">
     <div class="modal-content">
